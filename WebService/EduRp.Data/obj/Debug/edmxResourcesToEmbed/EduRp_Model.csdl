@@ -1,0 +1,1494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="edurp_devModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ApplicationForm">
+    <Key>
+      <PropertyRef Name="ApplicationFormId" />
+    </Key>
+    <Property Name="ApplicationFormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppFormTemplateId" Type="Int32" />
+    <Property Name="AdmissionNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="Approve" Type="Byte" />
+    <Property Name="ApprovedDt" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedBy" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDt" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReceiptNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentReceivedBy" Type="Int32" />
+    <Property Name="PaymentComments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Createddt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ApplicationFormDetail">
+    <Key>
+      <PropertyRef Name="AppFormDetailId" />
+    </Key>
+    <Property Name="AppFormDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationFormId" Type="Int32" />
+    <Property Name="AppFormFieldId" Type="Int32" />
+    <Property Name="Value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormDocument">
+    <Key>
+      <PropertyRef Name="AppFormDocumentID" />
+    </Key>
+    <Property Name="AppFormDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationFormId" Type="Int32" />
+    <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReviewStatus" Type="Byte" />
+    <Property Name="ReviewdBy" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormExamResult">
+    <Key>
+      <PropertyRef Name="AppFormExamResultID" />
+    </Key>
+    <Property Name="AppFormExamResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationFormId" Type="Int32" />
+    <Property Name="ExamType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Result" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormFeeAssociation">
+    <Key>
+      <PropertyRef Name="AppFormFeeId" />
+    </Key>
+    <Property Name="AppFormFeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppFormTemplateId" Type="Int32" Nullable="false" />
+    <Property Name="FeeId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormField">
+    <Key>
+      <PropertyRef Name="AppFormFieldId" />
+    </Key>
+    <Property Name="AppFormFieldId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppFormGroupID" Type="Int32" />
+    <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldDataType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldOrder" Type="Byte" />
+    <Property Name="FieldDropDownValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormGroup">
+    <Key>
+      <PropertyRef Name="AppFormGroupId" />
+    </Key>
+    <Property Name="AppFormGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppFormGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppFormGroupLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EnableToUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppFormTemplateId" Type="Int32" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ApplicationFormTemplate">
+    <Key>
+      <PropertyRef Name="AppFormTemplateId" />
+    </Key>
+    <Property Name="AppFormTemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppFormTemplateName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BatchApplicationFormAssociation">
+    <Key>
+      <PropertyRef Name="BatchApplicationFormId" />
+    </Key>
+    <Property Name="BatchApplicationFormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationFormId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BatchFeeAssociation">
+    <Key>
+      <PropertyRef Name="BatchFeeId" />
+    </Key>
+    <Property Name="BatchFeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" Nullable="false" />
+    <Property Name="FeeId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BatchMaster">
+    <Key>
+      <PropertyRef Name="BatchId" />
+    </Key>
+    <Property Name="BatchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ResultType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AcademicTerm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BatchProgramStudyAssociation">
+    <Key>
+      <PropertyRef Name="BatchProgramStudyId" />
+    </Key>
+    <Property Name="BatchProgramStudyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" Nullable="false" />
+    <Property Name="ProgramStudyId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BulkLoadMaster">
+    <Key>
+      <PropertyRef Name="BulkLoadMasterId" />
+    </Key>
+    <Property Name="BulkLoadMasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnivercityID" Type="Int32" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SQLLoaderJobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ChapterMaster">
+    <Key>
+      <PropertyRef Name="ChapterId" />
+    </Key>
+    <Property Name="ChapterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChapterNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChapterTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModeOfTeaching" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChapterDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SKS" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ClassRoomMaster">
+    <Key>
+      <PropertyRef Name="ClassRoomId" />
+    </Key>
+    <Property Name="ClassRoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuildingCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BuildingName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RoomCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RoomName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CapacityOfRoom" Type="Int32" />
+    <Property Name="Facility" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CourseMaster">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SKS" Type="Int32" />
+    <Property Name="CourseType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CourseGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CourseSubjectAssociation">
+    <Key>
+      <PropertyRef Name="CourseSubjectId" />
+    </Key>
+    <Property Name="CourseSubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="SubjectId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeMaster">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="UniversityId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NIDN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="GenderId" Type="Int32" />
+    <Property Name="BloodGroupId" Type="Int32" />
+    <Property Name="ReligionId" Type="Int32" />
+    <Property Name="MaritalStatusId" Type="Int32" />
+    <Property Name="NationalityId" Type="Int32" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LandLineNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofJoining" Type="DateTime" Precision="0" />
+    <Property Name="NoOfYearsOfService" Type="Int32" />
+    <Property Name="IncludeInPayroll" Type="Boolean" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DocumentMasterId" Type="Int32" />
+    <Property Name="Achievements" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PANNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PFNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeLastDate" Type="DateTime" Precision="0" />
+    <Property Name="IsEmploymentConfirmed" Type="Boolean" />
+    <Property Name="IsUnderProbation" Type="Boolean" />
+    <Property Name="ProbationEndDate" Type="DateTime" Precision="0" />
+    <Property Name="ReportingManagerId" Type="Int32" />
+    <Property Name="ApplyTax" Type="Boolean" />
+    <Property Name="InvitationSent" Type="Boolean" />
+    <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ExaminationType">
+    <Key>
+      <PropertyRef Name="ExaminationId" />
+    </Key>
+    <Property Name="ExaminationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExamGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ExamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MinMarks" Type="Int32" />
+    <Property Name="MaxMarks" Type="Int32" />
+    <Property Name="FeeLabel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Fee">
+    <Key>
+      <PropertyRef Name="FeeId" />
+    </Key>
+    <Property Name="FeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeeLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FeeType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProgramStudy">
+    <Key>
+      <PropertyRef Name="ProgramStudyId" />
+    </Key>
+    <Property Name="ProgramStudyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramStudyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramStudyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AcademicTerm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SKS" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProgramStudyCourseAssociation">
+    <Key>
+      <PropertyRef Name="ProgramStudyCourseId" />
+    </Key>
+    <Property Name="ProgramStudyCourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramStudyId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProgramStudyFeeAssociation">
+    <Key>
+      <PropertyRef Name="ProgramStudyFeeId" />
+    </Key>
+    <Property Name="ProgramStudyFeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramStudyId" Type="Int32" Nullable="false" />
+    <Property Name="FeeId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ScreenMaster">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScreenTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ScreenDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenOrder" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="NavigationUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="UserRoleId" Type="Int32" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SubjectChapterAssociation">
+    <Key>
+      <PropertyRef Name="SubjectChapterid" />
+    </Key>
+    <Property Name="SubjectChapterid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="Int32" Nullable="false" />
+    <Property Name="ChapterId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SubjectMaster">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SKS" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TaskDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TaskDuration" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TaskEmployeeAssociation">
+    <Key>
+      <PropertyRef Name="TaskEmployeeId" />
+    </Key>
+    <Property Name="TaskEmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="UniversityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblFileBulkUploadRequest">
+    <Key>
+      <PropertyRef Name="BulkLoadRequestId" />
+    </Key>
+    <Property Name="BulkLoadRequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnivesityId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileExtension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileUploadtoFolderStatus" Type="Boolean" Nullable="false" />
+    <Property Name="FileUploadtoDBStatus" Type="Boolean" Nullable="false" />
+    <Property Name="FileUploadedtoFolderOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FileUploadedtoDBOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="AuthToken" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IssuedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpiresOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="UniversityMaster">
+    <Key>
+      <PropertyRef Name="UniversityId" />
+    </Key>
+    <Property Name="UniversityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="UniversityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityLogoPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityParentURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DocumentId" Type="Int32" />
+    <Property Name="AdminId" Type="Int32" />
+    <Property Name="CultureId" Type="Int32" />
+    <Property Name="DateFormatId" Type="Int32" />
+    <Property Name="DateTimeFormatId" Type="Int32" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="PassAttemptCount" Type="Int32" />
+    <Property Name="AuthenticationToken" Type="Guid" />
+    <Property Name="LastLoginIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultLanguage" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="loginid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlaintextPWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeviceToken" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceIdentifier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserRoleId" Type="Int32" />
+    <Property Name="ImageURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserUniversityAssociation">
+    <Key>
+      <PropertyRef Name="UserUniversityAssociationId" />
+    </Key>
+    <Property Name="UniversityId" Type="Int32" Nullable="false" />
+    <Property Name="UserUniversityAssociationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="edurp_devEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ApplicationForms" EntityType="Self.ApplicationForm" />
+    <EntitySet Name="ApplicationFormDetails" EntityType="Self.ApplicationFormDetail" />
+    <EntitySet Name="ApplicationFormDocuments" EntityType="Self.ApplicationFormDocument" />
+    <EntitySet Name="ApplicationFormExamResults" EntityType="Self.ApplicationFormExamResult" />
+    <EntitySet Name="ApplicationFormFeeAssociations" EntityType="Self.ApplicationFormFeeAssociation" />
+    <EntitySet Name="ApplicationFormFields" EntityType="Self.ApplicationFormField" />
+    <EntitySet Name="ApplicationFormGroups" EntityType="Self.ApplicationFormGroup" />
+    <EntitySet Name="ApplicationFormTemplates" EntityType="Self.ApplicationFormTemplate" />
+    <EntitySet Name="BatchApplicationFormAssociations" EntityType="Self.BatchApplicationFormAssociation" />
+    <EntitySet Name="BatchFeeAssociations" EntityType="Self.BatchFeeAssociation" />
+    <EntitySet Name="BatchMasters" EntityType="Self.BatchMaster" />
+    <EntitySet Name="BatchProgramStudyAssociations" EntityType="Self.BatchProgramStudyAssociation" />
+    <EntitySet Name="BulkLoadMasters" EntityType="Self.BulkLoadMaster" />
+    <EntitySet Name="ChapterMasters" EntityType="Self.ChapterMaster" />
+    <EntitySet Name="ClassRoomMasters" EntityType="Self.ClassRoomMaster" />
+    <EntitySet Name="CourseMasters" EntityType="Self.CourseMaster" />
+    <EntitySet Name="CourseSubjectAssociations" EntityType="Self.CourseSubjectAssociation" />
+    <EntitySet Name="EmployeeMasters" EntityType="Self.EmployeeMaster" />
+    <EntitySet Name="ExaminationTypes" EntityType="Self.ExaminationType" />
+    <EntitySet Name="Fees" EntityType="Self.Fee" />
+    <EntitySet Name="ProgramStudies" EntityType="Self.ProgramStudy" />
+    <EntitySet Name="ProgramStudyCourseAssociations" EntityType="Self.ProgramStudyCourseAssociation" />
+    <EntitySet Name="ProgramStudyFeeAssociations" EntityType="Self.ProgramStudyFeeAssociation" />
+    <EntitySet Name="RoleMasters" EntityType="Self.RoleMaster" />
+    <EntitySet Name="ScreenMasters" EntityType="Self.ScreenMaster" />
+    <EntitySet Name="SubjectChapterAssociations" EntityType="Self.SubjectChapterAssociation" />
+    <EntitySet Name="SubjectMasters" EntityType="Self.SubjectMaster" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="TaskEmployeeAssociations" EntityType="Self.TaskEmployeeAssociation" />
+    <EntitySet Name="tblFileBulkUploadRequests" EntityType="Self.tblFileBulkUploadRequest" />
+    <EntitySet Name="Tokens" EntityType="Self.Token" />
+    <EntitySet Name="UniversityMasters" EntityType="Self.UniversityMaster" />
+    <EntitySet Name="UserMasters" EntityType="Self.UserMaster" />
+    <EntitySet Name="UserUniversityAssociations" EntityType="Self.UserUniversityAssociation" />
+    <FunctionImport Name="GetAdmissionNumber" ReturnType="Collection(edurp_devModel.GetAdmissionNumber_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAppFormTemplateDetail" ReturnType="Collection(edurp_devModel.GetAppFormTemplateDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetApplicationFormDetail" ReturnType="Collection(edurp_devModel.GetApplicationFormDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="admissionnumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetApplicationFormDocumentDetail" ReturnType="Collection(edurp_devModel.GetApplicationFormDocumentDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="admissionnumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetApplicationFormList">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchApplicationFormList">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchApplicationFormNotLinkedList">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchDetail" ReturnType="Collection(edurp_devModel.GetBatchDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchFeeNotLinkedList" ReturnType="Collection(edurp_devModel.GetBatchFeeNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchFeesList" ReturnType="Collection(edurp_devModel.GetBatchFeesList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchID" ReturnType="Collection(edurp_devModel.GetBatchID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchList" ReturnType="Collection(edurp_devModel.GetBatchList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchProgramStudyList" ReturnType="Collection(edurp_devModel.GetBatchProgramStudyList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBatchProgramStudyNotLinkedList" ReturnType="Collection(edurp_devModel.GetBatchProgramStudyNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBulkData" ReturnType="Collection(edurp_devModel.GetBulkData_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBulkLoadDetail" ReturnType="Collection(edurp_devModel.GetBulkLoadDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBulkLoadDetailById" ReturnType="Collection(edurp_devModel.GetBulkLoadDetailById_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="BulkLoadMasterId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetChapterDetail" ReturnType="Collection(edurp_devModel.GetChapterDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="chapterid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetChapterID" ReturnType="Collection(edurp_devModel.GetChapterID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetChapterList" ReturnType="Collection(edurp_devModel.GetChapterList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetClassRoomDetail" ReturnType="Collection(edurp_devModel.GetClassRoomDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="classroomid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetClassRoomList" ReturnType="Collection(edurp_devModel.GetClassRoomList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseDetail" ReturnType="Collection(edurp_devModel.GetCourseDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="courseid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseID" ReturnType="Collection(edurp_devModel.GetCourseID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseList" ReturnType="Collection(edurp_devModel.GetCourseList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseSubjectList" ReturnType="Collection(edurp_devModel.GetCourseSubjectList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="courseid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCourseSubjectNotLinkedList" ReturnType="Collection(edurp_devModel.GetCourseSubjectNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="courseid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetExaminationDetail" ReturnType="Collection(edurp_devModel.GetExaminationDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="examinationid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetExaminationList" ReturnType="Collection(edurp_devModel.GetExaminationList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetFeeDetail" ReturnType="Collection(edurp_devModel.GetFeeDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="feeid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetFeeList" ReturnType="Collection(edurp_devModel.GetFeeList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyCourseList" ReturnType="Collection(edurp_devModel.GetProgramStudyCourseList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="programstudyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyCourseNotLinkedList" ReturnType="Collection(edurp_devModel.GetProgramStudyCourseNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="programstudyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyDetail" ReturnType="Collection(edurp_devModel.GetProgramStudyDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="programstudyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyFeesList" ReturnType="Collection(edurp_devModel.GetProgramStudyFeesList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="programstudyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyFeesNotLinkedList" ReturnType="Collection(edurp_devModel.GetProgramStudyFeesNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="programstudyid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyID" ReturnType="Collection(edurp_devModel.GetProgramStudyID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgramStudyList" ReturnType="Collection(edurp_devModel.GetProgramStudyList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubjectChapterList" ReturnType="Collection(edurp_devModel.GetSubjectChapterList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="subjectid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubjectChapterNotLinkedList" ReturnType="Collection(edurp_devModel.GetSubjectChapterNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="subjectid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubjectDetail" ReturnType="Collection(edurp_devModel.GetSubjectDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="subjectid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubjectID" ReturnType="Collection(edurp_devModel.GetSubjectID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubjectList" ReturnType="Collection(edurp_devModel.GetSubjectList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetTaskDetail" ReturnType="Collection(edurp_devModel.GetTaskDetail_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="taskid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetTaskID" ReturnType="Collection(edurp_devModel.GetTaskID_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetTaskList" ReturnType="Collection(edurp_devModel.GetTaskList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetTaskStaffList" ReturnType="Collection(edurp_devModel.GetTaskStaffList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="taskid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetTaskStaffNotLinkedList" ReturnType="Collection(edurp_devModel.GetTaskStaffNotLinkedList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="taskid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LinkBatchApplicationForm">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkBatchFees">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkBatchProgramStudy">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkCourseSubject">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkProgramStudyCourse">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkProgramStudyFees">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkSubjectChapter">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LinkTaskStaff">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveApplicationForm">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveBatch">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveChapter">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveClassRoom">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveCourse">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveExamination">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveFee">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveProgramStudy">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveSubject">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveTask">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="testAppForm" ReturnType="Collection(DateTime)" />
+    <FunctionImport Name="UnLinkBatchApplicationForm">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkBatchFees">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkBatchProgramStudy">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkCourseSubject">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkProgramStudyCourse">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkProgramStudyFees">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkSubjectChapter">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UnLinkTaskStaff">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateApplicationForm">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateApplicationFormDocument">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateBatch">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateChapter">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateClassRoom">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateCourse">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateExamination">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateFee">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateProgramStudy">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateSubject">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateSubject_Test">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateTask">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ReportDetails" EntityType="edurp_devModel.ReportDetail" />
+    <EntitySet Name="ReportFilters" EntityType="edurp_devModel.ReportFilter" />
+    <EntitySet Name="ReportFilterAssociations" EntityType="edurp_devModel.ReportFilterAssociation" />
+    <EntitySet Name="ReportMenus" EntityType="edurp_devModel.ReportMenu" />
+    <EntitySet Name="tKeywords" EntityType="edurp_devModel.tKeyword" />
+    <EntitySet Name="tNotifications" EntityType="edurp_devModel.tNotification" />
+    <EntitySet Name="tNotificationLogs" EntityType="edurp_devModel.tNotificationLog" />
+    <EntitySet Name="tTemplateMasters" EntityType="edurp_devModel.tTemplateMaster" />
+    <FunctionImport Name="GetAdmissionNumber_bkp" ReturnType="Collection(edurp_devModel.GetAdmissionNumber_bkp_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="apptemplateid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetApplicationFormHeader" ReturnType="Collection(edurp_devModel.GetApplicationFormHeader_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="admissionnumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAuthenticationToken" ReturnType="Collection(edurp_devModel.GetAuthenticationToken_Result)">
+      <Parameter Name="emailid" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="lastloginipaddress" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pGetNotification" ReturnType="Collection(edurp_devModel.pGetNotification_Result)" />
+    <FunctionImport Name="pGetTemplate" ReturnType="Collection(edurp_devModel.pGetTemplate_Result)">
+      <Parameter Name="template" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pGetTemplateKeywords" ReturnType="Collection(edurp_devModel.pGetTemplateKeywords_Result)">
+      <Parameter Name="csv" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pNotificationLogINS">
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="NotificationId" Mode="In" Type="String" />
+      <Parameter Name="FromEmail" Mode="In" Type="String" />
+      <Parameter Name="ToEmail" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pNotificationUpd">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pTemplateKeywords" ReturnType="Collection(edurp_devModel.pTemplateKeywords_Result)">
+      <Parameter Name="csv" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateUser">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="firstname" Mode="In" Type="String" />
+      <Parameter Name="lastname" Mode="In" Type="String" />
+      <Parameter Name="emailaddress" Mode="In" Type="String" />
+      <Parameter Name="phonenumber" Mode="In" Type="String" />
+      <Parameter Name="plaintextpwd" Mode="In" Type="String" />
+      <Parameter Name="defaultlanguage" Mode="In" Type="String" />
+      <Parameter Name="lastloginipaddress" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAdmissionNumber_Result">
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAppFormTemplateDetail_Result">
+    <Property Type="Int32" Name="AppFormTemplateId" Nullable="false" />
+    <Property Type="Int32" Name="AppFormGroupId" Nullable="false" />
+    <Property Type="String" Name="AppFormGroupName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AppFormFieldId" Nullable="false" />
+    <Property Type="String" Name="DisplayName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FieldName" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="FieldOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetApplicationFormDetail_Result">
+    <Property Type="Int32" Name="AppFormGroupId" Nullable="false" />
+    <Property Type="String" Name="AppFormGroupLabel" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AppFormFieldId" Nullable="false" />
+    <Property Type="String" Name="FieldName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Value" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetApplicationFormDocumentDetail_Result">
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DocumentLink" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetBatchDetail_Result">
+    <Property Type="Int32" Name="BatchId" Nullable="false" />
+    <Property Type="String" Name="BatchName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ResultType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="AcademicTerm" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="GetBatchFeeNotLinkedList_Result">
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetBatchFeesList_Result">
+    <Property Type="Int32" Name="BatchId" Nullable="false" />
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetBatchID_Result">
+    <Property Type="Int32" Name="BatchId" Nullable="false" />
+    <Property Type="String" Name="BatchName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="GetBatchList_Result">
+    <Property Type="Int32" Name="BatchId" Nullable="false" />
+    <Property Type="String" Name="BatchName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ResultType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="AcademicTerm" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="GetBatchProgramStudyList_Result">
+    <Property Type="Int32" Name="BatchId" Nullable="false" />
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="String" Name="ProgramStudyCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ProgramStudyName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetBatchProgramStudyNotLinkedList_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="String" Name="ProgramStudyCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ProgramStudyName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetBulkData_Result">
+    <Property Type="Int32" Name="BulkLoadRequestId" Nullable="false" />
+    <Property Type="Int32" Name="UnivesityId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Comments" Nullable="true" />
+    <Property Type="String" Name="FilePath" Nullable="true" />
+    <Property Type="String" Name="FileName" Nullable="true" />
+    <Property Type="String" Name="FileExtension" Nullable="true" />
+    <Property Type="Boolean" Name="FileUploadtoFolderStatus" Nullable="false" />
+    <Property Type="Boolean" Name="FileUploadtoDBStatus" Nullable="false" />
+    <Property Type="DateTime" Name="FileUploadedtoFolderOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FileUploadedtoDBOn" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetBulkLoadDetail_Result">
+    <Property Type="Int32" Name="BulkLoadMasterId" Nullable="false" />
+    <Property Type="Int32" Name="UnivercityID" Nullable="true" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SQLLoaderJobName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetBulkLoadDetailById_Result">
+    <Property Type="Int32" Name="BulkLoadMasterId" Nullable="false" />
+    <Property Type="Int32" Name="UnivercityID" Nullable="true" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SQLLoaderJobName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetChapterDetail_Result">
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="ChapterNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModeOfTeaching" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChapterDetails" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetChapterID_Result">
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetChapterList_Result">
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="ChapterNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModeOfTeaching" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChapterDetails" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetClassRoomDetail_Result">
+    <Property Type="Int32" Name="ClassRoomId" Nullable="false" />
+    <Property Type="String" Name="BuildingCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="BuildingName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RoomCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="RoomName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CapacityOfRoom" Nullable="true" />
+    <Property Type="String" Name="Facility" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetClassRoomList_Result">
+    <Property Type="Int32" Name="ClassRoomId" Nullable="false" />
+    <Property Type="String" Name="BuildingCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="BuildingName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RoomCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="RoomName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CapacityOfRoom" Nullable="true" />
+    <Property Type="String" Name="Facility" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetCourseDetail_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="CourseCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourseName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+    <Property Type="String" Name="CourseType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CourseGroup" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetCourseID_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="CourseCode" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetCourseList_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="CourseCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourseName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+    <Property Type="String" Name="CourseType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CourseGroup" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetCourseSubjectList_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="SubjectCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetCourseSubjectNotLinkedList_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="SubjectCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetExaminationDetail_Result">
+    <Property Type="Int32" Name="ExaminationId" Nullable="false" />
+    <Property Type="String" Name="ExamGroup" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ExamName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="MinMarks" Nullable="true" />
+    <Property Type="Int32" Name="MaxMarks" Nullable="true" />
+    <Property Type="String" Name="FeeLabel" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="GetExaminationList_Result">
+    <Property Type="Int32" Name="ExaminationId" Nullable="false" />
+    <Property Type="String" Name="ExamGroup" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ExamName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="MinMarks" Nullable="true" />
+    <Property Type="Int32" Name="MaxMarks" Nullable="true" />
+    <Property Type="String" Name="FeeLabel" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="GetFeeDetail_Result">
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetFeeList_Result">
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyCourseList_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="CourseCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourseName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CourseType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CourseGroup" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyCourseNotLinkedList_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="CourseCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourseName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CourseType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CourseGroup" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyDetail_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="String" Name="ProgramStudyCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ProgramStudyName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AcademicTerm" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyFeesList_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyFeesNotLinkedList_Result">
+    <Property Type="Int32" Name="FeeId" Nullable="false" />
+    <Property Type="String" Name="FeeLabel" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="FeeType" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyID_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="String" Name="ProgramStudyCode" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetProgramStudyList_Result">
+    <Property Type="Int32" Name="ProgramStudyId" Nullable="false" />
+    <Property Type="String" Name="ProgramStudyCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ProgramStudyName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AcademicTerm" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSubjectChapterList_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="ChapterNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModeOfTeaching" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChapterDetails" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSubjectChapterNotLinkedList_Result">
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="ChapterNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModeOfTeaching" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChapterDetails" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSubjectDetail_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="SubjectCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSubjectID_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="SubjectCode" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetSubjectList_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="SubjectCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SKS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetTaskDetail_Result">
+    <Property Type="Int32" Name="TaskId" Nullable="false" />
+    <Property Type="String" Name="TaskName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TaskDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="TaskDuration" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetTaskID_Result">
+    <Property Type="Int32" Name="TaskId" Nullable="false" />
+    <Property Type="String" Name="TaskName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TaskDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="TaskDuration" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetTaskList_Result">
+    <Property Type="Int32" Name="TaskId" Nullable="false" />
+    <Property Type="String" Name="TaskName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TaskDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="TaskDuration" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetTaskStaffList_Result">
+    <Property Type="Int32" Name="TaskId" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetTaskStaffNotLinkedList_Result">
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="ReportDetail">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReportTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReportDataSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Graph1Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Graph1Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Graph1DataSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Graph2Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Graph2Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Graph2DataSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReportFilter">
+    <Key>
+      <PropertyRef Name="FilterId" />
+    </Key>
+    <Property Name="FilterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilterLabel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FilterType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FilterDataSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReportFilterAssociation">
+    <Key>
+      <PropertyRef Name="ReportFilterAssociationId" />
+    </Key>
+    <Property Name="ReportFilterAssociationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="Int32" Nullable="false" />
+    <Property Name="FilterId" Type="Int32" Nullable="false" />
+    <Property Name="OrderBy" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportMenu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MenuType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MenuOrder" Type="Byte" Nullable="false" />
+    <Property Name="MenuIcon" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Navigationurl" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PageTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SPname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Byte" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tKeyword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Keywords" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActualWords" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tNotification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnivercityID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attachement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SourceModule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="InsertedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tNotificationLog">
+    <Key>
+      <PropertyRef Name="NotificationLogID" />
+    </Key>
+    <Property Name="NotificationLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationID" Type="Int32" />
+    <Property Name="FromEmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ToEmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tTemplateMaster">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnivercityID" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="GetAdmissionNumber_bkp_Result">
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetApplicationFormHeader_Result">
+    <Property Type="Int32" Name="ApplicationFormId" Nullable="false" />
+    <Property Type="Int32" Name="AppFormTemplateId" Nullable="true" />
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Byte" Name="Status" Nullable="true" />
+    <Property Type="Byte" Name="Approve" Nullable="true" />
+    <Property Type="DateTime" Name="ApprovedDt" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ApprovedBy" Nullable="true" />
+    <Property Type="String" Name="Comments" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PaymentType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PaymentDt" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="ReceiptNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PaymentReceivedBy" Nullable="true" />
+    <Property Type="String" Name="PaymentComments" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="UniversityId" Nullable="true" />
+    <Property Type="Byte" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="lastupdateddt" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="lastupdatedby" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="DateTime" Name="Createddt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetAuthenticationToken_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" />
+    <Property Type="Guid" Name="AuthenticationToken" Nullable="true" />
+    <Property Type="Int32" Name="UserRoleId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pGetNotification_Result">
+    <Property Type="Int32" Name="NotificationID" Nullable="false" />
+    <Property Type="Int32" Name="UnivercityID" Nullable="true" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NotificationType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Frequency" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Attachement" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="StartDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDateTime" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TemplateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SourceModule" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="InsertedDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="ToEmail" Nullable="false" MaxLength="21" />
+  </ComplexType>
+  <ComplexType Name="pGetTemplate_Result">
+    <Property Type="Int32" Name="TemplateId" Nullable="false" />
+    <Property Type="Int32" Name="UnivercityID" Nullable="true" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TemplateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TemplateDetail" Nullable="true" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FromEmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Active" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="InsertedDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="pGetTemplateKeywords_Result">
+    <Property Type="String" Name="Keywords" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ActualWords" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="pTemplateKeywords_Result">
+    <Property Type="Int32" Name="NotificationID" Nullable="false" />
+    <Property Type="Int32" Name="UnivercityID" Nullable="true" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NotificationType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Frequency" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Attachement" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="StartDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDateTime" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TemplateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SourceModule" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="InsertedDate" Nullable="false" Precision="23" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,1105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="edurp_devModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApplicationForm">
+    <Key>
+      <PropertyRef Name="ApplicationFormId" />
+    </Key>
+    <Property Name="ApplicationFormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppFormTemplateId" Type="int" />
+    <Property Name="AdmissionNumber" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Approve" Type="tinyint" />
+    <Property Name="ApprovedDt" Type="datetime" />
+    <Property Name="ApprovedBy" Type="int" />
+    <Property Name="Comments" Type="varchar" MaxLength="200" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDt" Type="datetime" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ReceiptNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentReceivedBy" Type="int" />
+    <Property Name="PaymentComments" Type="varchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Createddt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ApplicationFormDetail">
+    <Key>
+      <PropertyRef Name="AppFormDetailId" />
+    </Key>
+    <Property Name="AppFormDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationFormId" Type="int" />
+    <Property Name="AppFormFieldId" Type="int" />
+    <Property Name="Value" Type="varchar" MaxLength="500" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormDocument">
+    <Key>
+      <PropertyRef Name="AppFormDocumentID" />
+    </Key>
+    <Property Name="AppFormDocumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationFormId" Type="int" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+    <Property Name="DocumentLink" Type="varchar" MaxLength="100" />
+    <Property Name="ReviewStatus" Type="tinyint" />
+    <Property Name="ReviewdBy" Type="int" />
+    <Property Name="Comments" Type="varchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormExamResult">
+    <Key>
+      <PropertyRef Name="AppFormExamResultID" />
+    </Key>
+    <Property Name="AppFormExamResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationFormId" Type="int" />
+    <Property Name="ExamType" Type="varchar" MaxLength="50" />
+    <Property Name="Marks" Type="varchar" MaxLength="50" />
+    <Property Name="Result" Type="varchar" MaxLength="20" />
+    <Property Name="Comments" Type="varchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormFeeAssociation">
+    <Key>
+      <PropertyRef Name="AppFormFeeId" />
+    </Key>
+    <Property Name="AppFormFeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppFormTemplateId" Type="int" Nullable="false" />
+    <Property Name="FeeId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormField">
+    <Key>
+      <PropertyRef Name="AppFormFieldId" />
+    </Key>
+    <Property Name="AppFormFieldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppFormGroupID" Type="int" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="50" />
+    <Property Name="FieldName" Type="varchar" MaxLength="50" />
+    <Property Name="FieldDataType" Type="varchar" MaxLength="50" />
+    <Property Name="FieldOrder" Type="tinyint" />
+    <Property Name="FieldDropDownValue" Type="varchar" MaxLength="500" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormGroup">
+    <Key>
+      <PropertyRef Name="AppFormGroupId" />
+    </Key>
+    <Property Name="AppFormGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppFormGroupName" Type="varchar" MaxLength="50" />
+    <Property Name="AppFormGroupLabel" Type="varchar" MaxLength="50" />
+    <Property Name="EnableToUser" Type="varchar" MaxLength="50" />
+    <Property Name="AppFormTemplateId" Type="int" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationFormTemplate">
+    <Key>
+      <PropertyRef Name="AppFormTemplateId" />
+    </Key>
+    <Property Name="AppFormTemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppFormTemplateName" Type="varchar" MaxLength="20" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="BatchApplicationFormAssociation">
+    <Key>
+      <PropertyRef Name="BatchApplicationFormId" />
+    </Key>
+    <Property Name="BatchApplicationFormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="ApplicationFormId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="BatchFeeAssociation">
+    <Key>
+      <PropertyRef Name="BatchFeeId" />
+    </Key>
+    <Property Name="BatchFeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="FeeId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="BatchMaster">
+    <Key>
+      <PropertyRef Name="BatchId" />
+    </Key>
+    <Property Name="BatchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchName" Type="varchar" MaxLength="20" />
+    <Property Name="ResultType" Type="varchar" MaxLength="20" />
+    <Property Name="AcademicTerm" Type="varchar" MaxLength="20" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="BatchProgramStudyAssociation">
+    <Key>
+      <PropertyRef Name="BatchProgramStudyId" />
+    </Key>
+    <Property Name="BatchProgramStudyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" Nullable="false" />
+    <Property Name="ProgramStudyId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="BulkLoadMaster">
+    <Key>
+      <PropertyRef Name="BulkLoadMasterId" />
+    </Key>
+    <Property Name="BulkLoadMasterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnivercityID" Type="int" />
+    <Property Name="ModuleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SQLLoaderJobName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ChapterMaster">
+    <Key>
+      <PropertyRef Name="ChapterId" />
+    </Key>
+    <Property Name="ChapterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChapterNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ChapterTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModeOfTeaching" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChapterDetails" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SKS" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ClassRoomMaster">
+    <Key>
+      <PropertyRef Name="ClassRoomId" />
+    </Key>
+    <Property Name="ClassRoomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuildingCode" Type="varchar" MaxLength="10" />
+    <Property Name="BuildingName" Type="varchar" MaxLength="100" />
+    <Property Name="RoomCode" Type="varchar" MaxLength="10" />
+    <Property Name="RoomName" Type="varchar" MaxLength="100" />
+    <Property Name="CapacityOfRoom" Type="int" />
+    <Property Name="Facility" Type="varchar" MaxLength="100" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="CourseMaster">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseCode" Type="varchar" MaxLength="10" />
+    <Property Name="CourseName" Type="varchar" MaxLength="100" />
+    <Property Name="SKS" Type="int" />
+    <Property Name="CourseType" Type="char" MaxLength="1" />
+    <Property Name="CourseGroup" Type="varchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="CourseSubjectAssociation">
+    <Key>
+      <PropertyRef Name="CourseSubjectId" />
+    </Key>
+    <Property Name="CourseSubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeMaster">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="UniversityId" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NIDN" Type="varchar" MaxLength="100" />
+    <Property Name="NIP" Type="varchar" MaxLength="100" />
+    <Property Name="HP" Type="varchar" MaxLength="100" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="DateofBirth" Type="date" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="BloodGroupId" Type="int" />
+    <Property Name="ReligionId" Type="int" />
+    <Property Name="MaritalStatusId" Type="int" />
+    <Property Name="NationalityId" Type="int" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LandLineNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DateofJoining" Type="date" />
+    <Property Name="NoOfYearsOfService" Type="int" />
+    <Property Name="IncludeInPayroll" Type="bit" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DocumentMasterId" Type="int" />
+    <Property Name="Achievements" Type="varchar" MaxLength="2000" />
+    <Property Name="PANNumber" Type="varchar" MaxLength="20" />
+    <Property Name="PFNumber" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeLastDate" Type="date" />
+    <Property Name="IsEmploymentConfirmed" Type="bit" />
+    <Property Name="IsUnderProbation" Type="bit" />
+    <Property Name="ProbationEndDate" Type="date" />
+    <Property Name="ReportingManagerId" Type="int" />
+    <Property Name="ApplyTax" Type="bit" />
+    <Property Name="InvitationSent" Type="bit" />
+    <Property Name="EmailId" Type="varchar" MaxLength="100" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ExaminationType">
+    <Key>
+      <PropertyRef Name="ExaminationId" />
+    </Key>
+    <Property Name="ExaminationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExamGroup" Type="varchar" MaxLength="10" />
+    <Property Name="ExamName" Type="varchar" MaxLength="100" />
+    <Property Name="MinMarks" Type="int" />
+    <Property Name="MaxMarks" Type="int" />
+    <Property Name="FeeLabel" Type="varchar" MaxLength="100" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="Fee">
+    <Key>
+      <PropertyRef Name="FeeId" />
+    </Key>
+    <Property Name="FeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FeeLabel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FeeType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ProgramStudy">
+    <Key>
+      <PropertyRef Name="ProgramStudyId" />
+    </Key>
+    <Property Name="ProgramStudyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramStudyCode" Type="varchar" MaxLength="10" />
+    <Property Name="ProgramStudyName" Type="varchar" MaxLength="100" />
+    <Property Name="AcademicTerm" Type="varchar" MaxLength="100" />
+    <Property Name="SKS" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ProgramStudyCourseAssociation">
+    <Key>
+      <PropertyRef Name="ProgramStudyCourseId" />
+    </Key>
+    <Property Name="ProgramStudyCourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramStudyId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProgramStudyFeeAssociation">
+    <Key>
+      <PropertyRef Name="ProgramStudyFeeId" />
+    </Key>
+    <Property Name="ProgramStudyFeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramStudyId" Type="int" Nullable="false" />
+    <Property Name="FeeId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="ReportDetail">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportDataSP" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Graph1Title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Graph1Type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Graph1DataSP" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Graph2Title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Graph2Type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Graph2DataSP" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ReportFilter">
+    <Key>
+      <PropertyRef Name="FilterId" />
+    </Key>
+    <Property Name="FilterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilterLabel" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FilterType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FilterDataSP" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ReportFilterAssociation">
+    <Key>
+      <PropertyRef Name="ReportFilterAssociationId" />
+    </Key>
+    <Property Name="ReportFilterAssociationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportId" Type="int" Nullable="false" />
+    <Property Name="FilterId" Type="int" Nullable="false" />
+    <Property Name="OrderBy" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportMenu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MenuType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MenuOrder" Type="tinyint" Nullable="false" />
+    <Property Name="MenuIcon" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Navigationurl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SPname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ParentId" Type="tinyint" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="ScreenMaster">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScreenTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScreenDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="ScreenOrder" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="NavigationUrl" Type="varchar" MaxLength="256" />
+    <Property Name="UserRoleId" Type="int" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="SubjectChapterAssociation">
+    <Key>
+      <PropertyRef Name="SubjectChapterid" />
+    </Key>
+    <Property Name="SubjectChapterid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="ChapterId" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="SubjectMaster">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SubjectName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SKS" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TaskDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TaskDuration" Type="int" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="TaskEmployeeAssociation">
+    <Key>
+      <PropertyRef Name="TaskEmployeeId" />
+    </Key>
+    <Property Name="TaskEmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskId" Type="int" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="UniversityId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblFileBulkUploadRequest">
+    <Key>
+      <PropertyRef Name="BulkLoadRequestId" />
+    </Key>
+    <Property Name="BulkLoadRequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnivesityId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="FilePath" Type="nvarchar(max)" />
+    <Property Name="FileName" Type="nvarchar(max)" />
+    <Property Name="FileExtension" Type="nvarchar(max)" />
+    <Property Name="FileUploadtoFolderStatus" Type="bit" Nullable="false" />
+    <Property Name="FileUploadtoDBStatus" Type="bit" Nullable="false" />
+    <Property Name="FileUploadedtoFolderOn" Type="datetime" Nullable="false" />
+    <Property Name="FileUploadedtoDBOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tKeywords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Keywords" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualWords" Type="nvarchar" MaxLength="50" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsertedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tNotification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnivercityID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Frequency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attachement" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SourceModule" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="InsertedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tNotificationLog">
+    <Key>
+      <PropertyRef Name="NotificationLogID" />
+    </Key>
+    <Property Name="NotificationLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationID" Type="int" />
+    <Property Name="FromEmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToEmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenId" />
+    </Key>
+    <Property Name="TokenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="AuthToken" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IssuedOn" Type="datetime" Nullable="false" />
+    <Property Name="ExpiresOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tTemplateMaster">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnivercityID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TemplateDetail" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsertedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UniversityMaster">
+    <Key>
+      <PropertyRef Name="UniversityId" />
+    </Key>
+    <Property Name="UniversityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="UniversityName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UniversityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityURL" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityLogoPath" Type="varchar" MaxLength="100" />
+    <Property Name="UniversityParentURL" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DocumentId" Type="int" />
+    <Property Name="AdminId" Type="int" />
+    <Property Name="CultureId" Type="int" />
+    <Property Name="DateFormatId" Type="int" />
+    <Property Name="DateTimeFormatId" Type="int" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="PassAttemptCount" Type="int" />
+    <Property Name="AuthenticationToken" Type="uniqueidentifier" />
+    <Property Name="LastLoginIPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="DefaultLanguage" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="loginid" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaintextPWD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceType" Type="char" MaxLength="1" />
+    <Property Name="DeviceToken" Type="nvarchar" MaxLength="500" />
+    <Property Name="DeviceIdentifier" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserRoleId" Type="int" />
+    <Property Name="ImageURL" Type="varchar" MaxLength="100" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="UserUniversityAssociation">
+    <Key>
+      <PropertyRef Name="UserUniversityAssociationId" />
+    </Key>
+    <Property Name="UniversityId" Type="int" Nullable="false" />
+    <Property Name="UserUniversityAssociationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Function Name="fValidateToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAdmissionNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAdmissionNumber_bkp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="apptemplateid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetApplicationFormDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="admissionnumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetApplicationFormDocumentDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="admissionnumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetApplicationFormHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="admissionnumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetApplicationFormList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAuthenticationToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emailid" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="lastloginipaddress" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetBatchApplicationFormList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetBatchApplicationFormNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetBatchDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBatchFeeNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBatchFeesList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBatchID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetBatchList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetBatchProgramStudyList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBatchProgramStudyNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBulkData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBulkLoadDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBulkLoadDetailById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="BulkLoadMasterId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetChapterDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="chapterid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetChapterID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetChapterList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetClassRoomDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="classroomid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetClassRoomList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetCourseDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="courseid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCourseID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetCourseList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetCourseSubjectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="courseid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCourseSubjectNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="courseid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetExaminationDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="examinationid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetExaminationList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetFeeDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="feeid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetFeeList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyCourseList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="programstudyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyCourseNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="programstudyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="programstudyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyFeesList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="programstudyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyFeesNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="programstudyid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetProgramStudyList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSubjectChapterList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="subjectid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSubjectChapterNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="subjectid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSubjectDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="subjectid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSubjectID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSubjectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetTaskDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="taskid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTaskID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetTaskList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetTaskStaffList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="taskid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTaskStaffNotLinkedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="taskid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LinkBatchApplicationForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkBatchFees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkBatchProgramStudy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkCourseSubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkProgramStudyCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkProgramStudyFees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkSubjectChapter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="LinkTaskStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pGetNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pGetTemplate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="template" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pGetTemplateKeywords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="csv" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pNotificationLogINS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+    <Parameter Name="NotificationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pNotificationUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pTemplateKeywords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="csv" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RemoveApplicationForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveBatch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveChapter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveClassRoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveExamination" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveFee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveProgramStudy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveSubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RemoveTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="testAppForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UnLinkBatchApplicationForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkBatchFees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkBatchProgramStudy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkCourseSubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkProgramStudyCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkProgramStudyFees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkSubjectChapter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UnLinkTaskStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateApplicationForm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateApplicationFormDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateBatch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateChapter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateClassRoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateExamination" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateFee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateProgramStudy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateSubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateSubject_Test" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateTask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="gender" Type="char" Mode="In" />
+    <Parameter Name="firstname" Type="varchar" Mode="In" />
+    <Parameter Name="lastname" Type="varchar" Mode="In" />
+    <Parameter Name="emailaddress" Type="varchar" Mode="In" />
+    <Parameter Name="phonenumber" Type="varchar" Mode="In" />
+    <Parameter Name="plaintextpwd" Type="varchar" Mode="In" />
+    <Parameter Name="defaultlanguage" Type="char" Mode="In" />
+    <Parameter Name="lastloginipaddress" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="edurp_devModelStoreContainer">
+    <EntitySet Name="ApplicationForm" EntityType="Self.ApplicationForm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormDetail" EntityType="Self.ApplicationFormDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormDocument" EntityType="Self.ApplicationFormDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormExamResult" EntityType="Self.ApplicationFormExamResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormFeeAssociation" EntityType="Self.ApplicationFormFeeAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormField" EntityType="Self.ApplicationFormField" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormGroup" EntityType="Self.ApplicationFormGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationFormTemplate" EntityType="Self.ApplicationFormTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchApplicationFormAssociation" EntityType="Self.BatchApplicationFormAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchFeeAssociation" EntityType="Self.BatchFeeAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchMaster" EntityType="Self.BatchMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchProgramStudyAssociation" EntityType="Self.BatchProgramStudyAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BulkLoadMaster" EntityType="Self.BulkLoadMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChapterMaster" EntityType="Self.ChapterMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassRoomMaster" EntityType="Self.ClassRoomMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseMaster" EntityType="Self.CourseMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseSubjectAssociation" EntityType="Self.CourseSubjectAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeMaster" EntityType="Self.EmployeeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExaminationType" EntityType="Self.ExaminationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fee" EntityType="Self.Fee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramStudy" EntityType="Self.ProgramStudy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramStudyCourseAssociation" EntityType="Self.ProgramStudyCourseAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramStudyFeeAssociation" EntityType="Self.ProgramStudyFeeAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportDetail" EntityType="Self.ReportDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportFilter" EntityType="Self.ReportFilter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportFilterAssociation" EntityType="Self.ReportFilterAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportMenu" EntityType="Self.ReportMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScreenMaster" EntityType="Self.ScreenMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubjectChapterAssociation" EntityType="Self.SubjectChapterAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubjectMaster" EntityType="Self.SubjectMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskEmployeeAssociation" EntityType="Self.TaskEmployeeAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFileBulkUploadRequest" EntityType="Self.tblFileBulkUploadRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tKeywords" EntityType="Self.tKeywords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tNotification" EntityType="Self.tNotification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tNotificationLog" EntityType="Self.tNotificationLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tTemplateMaster" EntityType="Self.tTemplateMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UniversityMaster" EntityType="Self.UniversityMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserUniversityAssociation" EntityType="Self.UserUniversityAssociation" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
