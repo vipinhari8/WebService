@@ -27,11 +27,23 @@ namespace EduRp.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AcadCalendar> AcadCalendars { get; set; }
         public virtual DbSet<AcadConductLetterPermi> AcadConductLetterPermis { get; set; }
         public virtual DbSet<AcadConductLostFound> AcadConductLostFounds { get; set; }
         public virtual DbSet<AcadConductMeritDemerit> AcadConductMeritDemerits { get; set; }
         public virtual DbSet<AcadConductMYL> AcadConductMYLs { get; set; }
         public virtual DbSet<AcadConductStudentCharacter> AcadConductStudentCharacters { get; set; }
+        public virtual DbSet<AcadExamResultAssesRpt> AcadExamResultAssesRpts { get; set; }
+        public virtual DbSet<AcadExamResultPhEdu> AcadExamResultPhEdus { get; set; }
+        public virtual DbSet<AcadExamResultQuiz> AcadExamResultQuizs { get; set; }
+        public virtual DbSet<AcadExExamSyllabu> AcadExExamSyllabus { get; set; }
+        public virtual DbSet<AcadHcareNurseNote> AcadHcareNurseNotes { get; set; }
+        public virtual DbSet<AcadLessonPlan> AcadLessonPlans { get; set; }
+        public virtual DbSet<AcadProCreativityReport> AcadProCreativityReports { get; set; }
+        public virtual DbSet<AcadStudentDairy> AcadStudentDairies { get; set; }
+        public virtual DbSet<AcadStudentLeaveApplication> AcadStudentLeaveApplications { get; set; }
+        public virtual DbSet<AcadTeacherNote> AcadTeacherNotes { get; set; }
+        public virtual DbSet<AcadTTExam> AcadTTExams { get; set; }
         public virtual DbSet<ApplicationForm> ApplicationForms { get; set; }
         public virtual DbSet<ApplicationFormDetail> ApplicationFormDetails { get; set; }
         public virtual DbSet<ApplicationFormDocument> ApplicationFormDocuments { get; set; }
@@ -45,6 +57,7 @@ namespace EduRp.Data
         public virtual DbSet<BatchMaster> BatchMasters { get; set; }
         public virtual DbSet<BatchProgramStudyAssociation> BatchProgramStudyAssociations { get; set; }
         public virtual DbSet<BulkLoadMaster> BulkLoadMasters { get; set; }
+        public virtual DbSet<CategoryMaster> CategoryMasters { get; set; }
         public virtual DbSet<ChapterMaster> ChapterMasters { get; set; }
         public virtual DbSet<ClassRoomMaster> ClassRoomMasters { get; set; }
         public virtual DbSet<CourseMaster> CourseMasters { get; set; }
@@ -82,6 +95,44 @@ namespace EduRp.Data
         public virtual DbSet<UserUniversityAssociation> UserUniversityAssociations { get; set; }
         public virtual DbSet<@event> events { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+    
+        public virtual ObjectResult<AcadCalendarGet_Result> AcadCalendarGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadCalendarGet_Result>("AcadCalendarGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter);
+        }
+    
+        public virtual int AcadCalendarUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadCalendarUpdate", universityidParameter, jsontextParameter);
+        }
     
         public virtual ObjectResult<AcadConductLetterPermisGet_Result> AcadConductLetterPermisGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> programstudyid, Nullable<int> courseid, Nullable<int> studentid)
         {
@@ -307,6 +358,489 @@ namespace EduRp.Data
                 new ObjectParameter("jsontext", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadConductStudentCharacterUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadExamResultAssesRptGet_Result> AcadExamResultAssesRptGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId, Nullable<int> sectionid, Nullable<int> studentid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            var sectionidParameter = sectionid.HasValue ?
+                new ObjectParameter("sectionid", sectionid) :
+                new ObjectParameter("sectionid", typeof(int));
+    
+            var studentidParameter = studentid.HasValue ?
+                new ObjectParameter("studentid", studentid) :
+                new ObjectParameter("studentid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadExamResultAssesRptGet_Result>("AcadExamResultAssesRptGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter, sectionidParameter, studentidParameter);
+        }
+    
+        public virtual ObjectResult<AcadExamResultAssesRptStudentsGet_Result> AcadExamResultAssesRptStudentsGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId, Nullable<int> sectionid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            var sectionidParameter = sectionid.HasValue ?
+                new ObjectParameter("sectionid", sectionid) :
+                new ObjectParameter("sectionid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadExamResultAssesRptStudentsGet_Result>("AcadExamResultAssesRptStudentsGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter, sectionidParameter);
+        }
+    
+        public virtual int AcadExamResultAssesRptUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadExamResultAssesRptUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadExamResultPhEduGet_Result> AcadExamResultPhEduGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId, Nullable<int> sectionid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            var sectionidParameter = sectionid.HasValue ?
+                new ObjectParameter("sectionid", sectionid) :
+                new ObjectParameter("sectionid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadExamResultPhEduGet_Result>("AcadExamResultPhEduGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter, sectionidParameter);
+        }
+    
+        public virtual int AcadExamResultPhEduUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadExamResultPhEduUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadExamResultQuizGet_Result> AcadExamResultQuizGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId, Nullable<int> sectionid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            var sectionidParameter = sectionid.HasValue ?
+                new ObjectParameter("sectionid", sectionid) :
+                new ObjectParameter("sectionid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadExamResultQuizGet_Result>("AcadExamResultQuizGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter, sectionidParameter);
+        }
+    
+        public virtual int AcadExamResultQuizUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadExamResultQuizUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadExExamSyllabusGet_Result> AcadExExamSyllabusGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> subjectId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadExExamSyllabusGet_Result>("AcadExExamSyllabusGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, subjectIdParameter);
+        }
+    
+        public virtual int AcadExExamSyllabusUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadExExamSyllabusUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadHcareNurseNoteGet_Result> AcadHcareNurseNoteGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeid, Nullable<int> sectionId, Nullable<int> studentid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeidParameter = gradeid.HasValue ?
+                new ObjectParameter("Gradeid", gradeid) :
+                new ObjectParameter("Gradeid", typeof(int));
+    
+            var sectionIdParameter = sectionId.HasValue ?
+                new ObjectParameter("SectionId", sectionId) :
+                new ObjectParameter("SectionId", typeof(int));
+    
+            var studentidParameter = studentid.HasValue ?
+                new ObjectParameter("studentid", studentid) :
+                new ObjectParameter("studentid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadHcareNurseNoteGet_Result>("AcadHcareNurseNoteGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeidParameter, sectionIdParameter, studentidParameter);
+        }
+    
+        public virtual int AcadHcareNurseNoteUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadHcareNurseNoteUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadLessonPlanGet_Result> AcadLessonPlanGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> subjectId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadLessonPlanGet_Result>("AcadLessonPlanGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, subjectIdParameter);
+        }
+    
+        public virtual int AcadLessonPlanUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadLessonPlanUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadProCreativityReportGet_Result> AcadProCreativityReportGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> gradeId, Nullable<int> sectionid)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("gradeId", gradeId) :
+                new ObjectParameter("gradeId", typeof(int));
+    
+            var sectionidParameter = sectionid.HasValue ?
+                new ObjectParameter("sectionid", sectionid) :
+                new ObjectParameter("sectionid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadProCreativityReportGet_Result>("AcadProCreativityReportGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, gradeIdParameter, sectionidParameter);
+        }
+    
+        public virtual int AcadProCreativityReportUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadProCreativityReportUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadStudentDairyGet_Result> AcadStudentDairyGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchId, Nullable<int> gradeId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchIdParameter = batchId.HasValue ?
+                new ObjectParameter("BatchId", batchId) :
+                new ObjectParameter("BatchId", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("GradeId", gradeId) :
+                new ObjectParameter("GradeId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadStudentDairyGet_Result>("AcadStudentDairyGet", universityidParameter, useridParameter, tokenParameter, batchIdParameter, gradeIdParameter);
+        }
+    
+        public virtual int AcadStudentDairyUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadStudentDairyUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadStudentLeaveApplicationGet_Result> AcadStudentLeaveApplicationGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchId, Nullable<int> gradeId, Nullable<int> sectionId, Nullable<int> studentId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchIdParameter = batchId.HasValue ?
+                new ObjectParameter("BatchId", batchId) :
+                new ObjectParameter("BatchId", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("GradeId", gradeId) :
+                new ObjectParameter("GradeId", typeof(int));
+    
+            var sectionIdParameter = sectionId.HasValue ?
+                new ObjectParameter("SectionId", sectionId) :
+                new ObjectParameter("SectionId", typeof(int));
+    
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadStudentLeaveApplicationGet_Result>("AcadStudentLeaveApplicationGet", universityidParameter, useridParameter, tokenParameter, batchIdParameter, gradeIdParameter, sectionIdParameter, studentIdParameter);
+        }
+    
+        public virtual int AcadStudentLeaveApplicationUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadStudentLeaveApplicationUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual int AcadTeacherNoteGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchId, Nullable<int> gradeId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchIdParameter = batchId.HasValue ?
+                new ObjectParameter("BatchId", batchId) :
+                new ObjectParameter("BatchId", typeof(int));
+    
+            var gradeIdParameter = gradeId.HasValue ?
+                new ObjectParameter("GradeId", gradeId) :
+                new ObjectParameter("GradeId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadTeacherNoteGet", universityidParameter, useridParameter, tokenParameter, batchIdParameter, gradeIdParameter);
+        }
+    
+        public virtual int AcadTeacherNoteUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadTeacherNoteUpdate", universityidParameter, jsontextParameter);
+        }
+    
+        public virtual ObjectResult<AcadTTExamGet_Result> AcadTTExamGet(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> batchid, Nullable<int> subjectId)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            var batchidParameter = batchid.HasValue ?
+                new ObjectParameter("batchid", batchid) :
+                new ObjectParameter("batchid", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AcadTTExamGet_Result>("AcadTTExamGet", universityidParameter, useridParameter, tokenParameter, batchidParameter, subjectIdParameter);
+        }
+    
+        public virtual int AcadTTExamUpdate(Nullable<int> universityid, string jsontext)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var jsontextParameter = jsontext != null ?
+                new ObjectParameter("jsontext", jsontext) :
+                new ObjectParameter("jsontext", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcadTTExamUpdate", universityidParameter, jsontextParameter);
         }
     
         public virtual ObjectResult<GetAdmissionNumber_Result> GetAdmissionNumber(Nullable<int> universityid, Nullable<int> userid, string token)
@@ -713,6 +1247,23 @@ namespace EduRp.Data
                 new ObjectParameter("BulkLoadMasterId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBulkLoadDetailById_Result>("GetBulkLoadDetailById", universityidParameter, bulkLoadMasterIdParameter);
+        }
+    
+        public virtual ObjectResult<GetCategoryList_Result> GetCategoryList(Nullable<int> universityid, Nullable<int> userid, string token)
+        {
+            var universityidParameter = universityid.HasValue ?
+                new ObjectParameter("universityid", universityid) :
+                new ObjectParameter("universityid", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var tokenParameter = token != null ?
+                new ObjectParameter("token", token) :
+                new ObjectParameter("token", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCategoryList_Result>("GetCategoryList", universityidParameter, useridParameter, tokenParameter);
         }
     
         public virtual ObjectResult<GetChapterDetail_Result> GetChapterDetail(Nullable<int> universityid, Nullable<int> userid, string token, Nullable<int> chapterid)

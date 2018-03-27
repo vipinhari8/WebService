@@ -9,10 +9,9 @@
 
 namespace EduRp.Data
 {
-    using EduRp.Data.ViewModel;
     using System;
     
-    public partial class GetApplicationFormHeader_Result: TokenEntityViewModel
+    public partial class GetApplicationFormHeader_Result
     {
         public int ApplicationFormId { get; set; }
         public Nullable<int> AppFormTemplateId { get; set; }

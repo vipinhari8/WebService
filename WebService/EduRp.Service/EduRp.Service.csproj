@@ -88,6 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IService\IAcademicConductService.cs" />
+    <Compile Include="IService\IAcadExamResultAssesRptService.cs" />
+    <Compile Include="IService\IAcadExamResultPhEduService.cs" />
+    <Compile Include="IService\IAcadExamResultQuizService.cs" />
+    <Compile Include="IService\IAcadExExamSyllabusService.cs" />
+    <Compile Include="IService\IAcadHcareNurseNoteGetService.cs" />
+    <Compile Include="IService\IAcadLessonPlanService.cs" />
+    <Compile Include="IService\IAcadProCreativityReportService.cs" />
+    <Compile Include="IService\IAcadStudentDairyService.cs" />
+    <Compile Include="IService\IAcadStudentLeaveApplicationService.cs" />
+    <Compile Include="IService\IAcadTeacherNoteService.cs" />
     <Compile Include="IService\IBatchFeeAssociationService.cs" />
     <Compile Include="IService\IBatchProgramStudyAssociationService.cs" />
     <Compile Include="IService\IClassRoomMasterService.cs" />
@@ -107,6 +117,16 @@
     <Compile Include="IService\ITaskStaffAssociationService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Service\AcademicConductService.cs" />
+    <Compile Include="Service\AcadExamResultAssesRptService.cs" />
+    <Compile Include="Service\AcadExamResultPhEduService.cs" />
+    <Compile Include="Service\AcadExamResultQuizService.cs" />
+    <Compile Include="Service\AcadExExamSyllabusService.cs" />
+    <Compile Include="Service\AcadHcareNurseNoteService.cs" />
+    <Compile Include="Service\AcadLessonPlanService.cs" />
+    <Compile Include="Service\AcadProCreativityReportService.cs" />
+    <Compile Include="Service\AcadStudentDairyService.cs" />
+    <Compile Include="Service\AcadStudentLeaveApplicationService.cs" />
+    <Compile Include="Service\AcadTeacherNoteService.cs" />
     <Compile Include="Service\MenuService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

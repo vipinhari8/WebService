@@ -19,7 +19,7 @@ namespace EduRp.Service.IService
 
         List<GetApplicationFormHeader_Result> GetApplicationHeader(int? id, int? userid, string tokenid, string admissionnum);
 
-        bool UpdateApplicationForm(int? id, List<GetApplicationFormDetail_Result> applicationFormDetail);
+        bool UpdateApplicationForm(int? id, List<UpdateStudentApplicationFormDetail> applicationFormDetail);
 
         bool UpdateDocument(int? id, List<GetApplicationFormDocumentDetail_Result> applicaitonFormDocument);
 

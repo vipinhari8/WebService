@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="encomp_devModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AcadCalendar">
+    <Key>
+      <PropertyRef Name="AcadCalendarId" />
+    </Key>
+    <Property Name="AcadCalendarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="EventName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="StartDatetime" Type="DateTime" Precision="3" />
+    <Property Name="EndDatetime" Type="DateTime" Precision="3" />
+    <Property Name="HolidayFlag" Type="Byte" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
   <EntityType Name="AcadConductLetterPermi">
     <Key>
       <PropertyRef Name="AcadConductLetterPermisId" />
@@ -69,6 +86,214 @@
     <Property Name="StudentId" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadExamResultAssesRpt">
+    <Key>
+      <PropertyRef Name="AcadExamResultAssesRptId" />
+    </Key>
+    <Property Name="AcadExamResultAssesRptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="ReportName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomeRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadExamResultPhEdu">
+    <Key>
+      <PropertyRef Name="AcadExamResultPhEduId" />
+    </Key>
+    <Property Name="AcadExamResultPhEduId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="Test" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadExamResultQuiz">
+    <Key>
+      <PropertyRef Name="AcadExamResultQuizId" />
+    </Key>
+    <Property Name="AcadExamResultQuizId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="Score" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadExExamSyllabu">
+    <Key>
+      <PropertyRef Name="AcadExExamSyllabusId" />
+    </Key>
+    <Property Name="AcadExExamSyllabusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="ExamtypeId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="ChapterId" Type="Int32" />
+    <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadHcareNurseNote">
+    <Key>
+      <PropertyRef Name="AcadHcareNurseNoteId" />
+    </Key>
+    <Property Name="AcadHcareNurseNoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="SickDate" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Prescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NurseName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Attachement" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadLessonPlan">
+    <Key>
+      <PropertyRef Name="AcadLessonPlanId" />
+    </Key>
+    <Property Name="AcadLessonPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="SemesterId" Type="Int32" />
+    <Property Name="Meeting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StandardofCompetance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BasicCompetance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Indicator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeAllocation" Type="Int32" />
+    <Property Name="InstructiveObjective" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeachingMaterial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeachingMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CharacterImplementation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IntialActivity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MainActivity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClosingActivity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LearningScore" Type="Int32" />
+    <Property Name="Assessment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubjectTeacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadProCreativityReport">
+    <Key>
+      <PropertyRef Name="AcadProCreativityReportId" />
+    </Key>
+    <Property Name="AcadProCreativityReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectDate" Type="DateTime" Precision="0" />
+    <Property Name="Type" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadStudentDairy">
+    <Key>
+      <PropertyRef Name="AcadStudentDairyId" />
+    </Key>
+    <Property Name="AcadStudentDairyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="StudentdairyDate" Type="DateTime" Precision="0" />
+    <Property Name="Section" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadStudentLeaveApplication">
+    <Key>
+      <PropertyRef Name="AcadStudentLeaveApplicationId" />
+    </Key>
+    <Property Name="AcadStudentLeaveApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="StudentLeaveApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="Section" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentStartDate" Type="DateTime" Precision="0" />
+    <Property Name="StudentEndDate" Type="DateTime" Precision="0" />
+    <Property Name="HomeRoomName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attachement" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadTeacherNote">
+    <Key>
+      <PropertyRef Name="AcadTeacherNoteId" />
+    </Key>
+    <Property Name="AcadTeacherNoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="TeacherNoteDate" Type="DateTime" Precision="0" />
+    <Property Name="Section" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attachement" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AcadTTExam">
+    <Key>
+      <PropertyRef Name="AcadTTExamId" />
+    </Key>
+    <Property Name="AcadTTExamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchId" Type="Int32" />
+    <Property Name="ExamtypeId" Type="Int32" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="ExamDate" Type="DateTime" Precision="0" />
+    <Property Name="ExamDay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExamTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
     <Property Name="UniversityId" Type="Int32" />
     <Property Name="active" Type="Byte" />
     <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
@@ -244,6 +469,17 @@
     <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SQLLoaderJobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="active" Type="Byte" />
+    <Property Name="lastupdateddt" Type="DateTime" Precision="3" />
+    <Property Name="lastupdatedby" Type="Int32" />
   </EntityType>
   <EntityType Name="ChapterMaster">
     <Key>
@@ -801,11 +1037,23 @@
     <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityContainer Name="encomp_devEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AcadCalendars" EntityType="Self.AcadCalendar" />
     <EntitySet Name="AcadConductLetterPermis" EntityType="Self.AcadConductLetterPermi" />
     <EntitySet Name="AcadConductLostFounds" EntityType="Self.AcadConductLostFound" />
     <EntitySet Name="AcadConductMeritDemerits" EntityType="Self.AcadConductMeritDemerit" />
     <EntitySet Name="AcadConductMYLs" EntityType="Self.AcadConductMYL" />
     <EntitySet Name="AcadConductStudentCharacters" EntityType="Self.AcadConductStudentCharacter" />
+    <EntitySet Name="AcadExamResultAssesRpts" EntityType="Self.AcadExamResultAssesRpt" />
+    <EntitySet Name="AcadExamResultPhEdus" EntityType="Self.AcadExamResultPhEdu" />
+    <EntitySet Name="AcadExamResultQuizs" EntityType="Self.AcadExamResultQuiz" />
+    <EntitySet Name="AcadExExamSyllabus" EntityType="Self.AcadExExamSyllabu" />
+    <EntitySet Name="AcadHcareNurseNotes" EntityType="Self.AcadHcareNurseNote" />
+    <EntitySet Name="AcadLessonPlans" EntityType="Self.AcadLessonPlan" />
+    <EntitySet Name="AcadProCreativityReports" EntityType="Self.AcadProCreativityReport" />
+    <EntitySet Name="AcadStudentDairies" EntityType="Self.AcadStudentDairy" />
+    <EntitySet Name="AcadStudentLeaveApplications" EntityType="Self.AcadStudentLeaveApplication" />
+    <EntitySet Name="AcadTeacherNotes" EntityType="Self.AcadTeacherNote" />
+    <EntitySet Name="AcadTTExams" EntityType="Self.AcadTTExam" />
     <EntitySet Name="ApplicationForms" EntityType="Self.ApplicationForm" />
     <EntitySet Name="ApplicationFormDetails" EntityType="Self.ApplicationFormDetail" />
     <EntitySet Name="ApplicationFormDocuments" EntityType="Self.ApplicationFormDocument" />
@@ -819,6 +1067,7 @@
     <EntitySet Name="BatchMasters" EntityType="Self.BatchMaster" />
     <EntitySet Name="BatchProgramStudyAssociations" EntityType="Self.BatchProgramStudyAssociation" />
     <EntitySet Name="BulkLoadMasters" EntityType="Self.BulkLoadMaster" />
+    <EntitySet Name="CategoryMasters" EntityType="Self.CategoryMaster" />
     <EntitySet Name="ChapterMasters" EntityType="Self.ChapterMaster" />
     <EntitySet Name="ClassRoomMasters" EntityType="Self.ClassRoomMaster" />
     <EntitySet Name="CourseMasters" EntityType="Self.CourseMaster" />
@@ -856,6 +1105,17 @@
     <EntitySet Name="UserUniversityAssociations" EntityType="Self.UserUniversityAssociation" />
     <EntitySet Name="events" EntityType="Self.event" />
     <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <FunctionImport Name="AcadCalendarGet" ReturnType="Collection(encomp_devModel.AcadCalendarGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadCalendarUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="AcadConductLetterPermisGet" ReturnType="Collection(encomp_devModel.AcadConductLetterPermisGet_Result)">
       <Parameter Name="universityid" Mode="In" Type="Int32" />
       <Parameter Name="userid" Mode="In" Type="Int32" />
@@ -917,6 +1177,144 @@
       <Parameter Name="courseid" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="AcadConductStudentCharacterUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultAssesRptGet" ReturnType="Collection(encomp_devModel.AcadExamResultAssesRptGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+      <Parameter Name="sectionid" Mode="In" Type="Int32" />
+      <Parameter Name="studentid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultAssesRptStudentsGet" ReturnType="Collection(encomp_devModel.AcadExamResultAssesRptStudentsGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+      <Parameter Name="sectionid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultAssesRptUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultPhEduGet" ReturnType="Collection(encomp_devModel.AcadExamResultPhEduGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+      <Parameter Name="sectionid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultPhEduUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultQuizGet" ReturnType="Collection(encomp_devModel.AcadExamResultQuizGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+      <Parameter Name="sectionid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExamResultQuizUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExExamSyllabusGet" ReturnType="Collection(encomp_devModel.AcadExExamSyllabusGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadExExamSyllabusUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadHcareNurseNoteGet" ReturnType="Collection(encomp_devModel.AcadHcareNurseNoteGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="Gradeid" Mode="In" Type="Int32" />
+      <Parameter Name="SectionId" Mode="In" Type="Int32" />
+      <Parameter Name="studentid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadHcareNurseNoteUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadLessonPlanGet" ReturnType="Collection(encomp_devModel.AcadLessonPlanGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadLessonPlanUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadProCreativityReportGet" ReturnType="Collection(encomp_devModel.AcadProCreativityReportGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="gradeId" Mode="In" Type="Int32" />
+      <Parameter Name="sectionid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadProCreativityReportUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadStudentDairyGet" ReturnType="Collection(encomp_devModel.AcadStudentDairyGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="BatchId" Mode="In" Type="Int32" />
+      <Parameter Name="GradeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadStudentDairyUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadStudentLeaveApplicationGet" ReturnType="Collection(encomp_devModel.AcadStudentLeaveApplicationGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="BatchId" Mode="In" Type="Int32" />
+      <Parameter Name="GradeId" Mode="In" Type="Int32" />
+      <Parameter Name="SectionId" Mode="In" Type="Int32" />
+      <Parameter Name="StudentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadStudentLeaveApplicationUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadTeacherNoteGet">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="BatchId" Mode="In" Type="Int32" />
+      <Parameter Name="GradeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadTeacherNoteUpdate">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="jsontext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AcadTTExamGet" ReturnType="Collection(encomp_devModel.AcadTTExamGet_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+      <Parameter Name="batchid" Mode="In" Type="Int32" />
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AcadTTExamUpdate">
       <Parameter Name="universityid" Mode="In" Type="Int32" />
       <Parameter Name="jsontext" Mode="In" Type="String" />
     </FunctionImport>
@@ -1037,6 +1435,11 @@
     <FunctionImport Name="GetBulkLoadDetailById" ReturnType="Collection(encomp_devModel.GetBulkLoadDetailById_Result)">
       <Parameter Name="universityid" Mode="In" Type="Int32" />
       <Parameter Name="BulkLoadMasterId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCategoryList" ReturnType="Collection(encomp_devModel.GetCategoryList_Result)">
+      <Parameter Name="universityid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="GetChapterDetail" ReturnType="Collection(encomp_devModel.GetChapterDetail_Result)">
       <Parameter Name="universityid" Mode="In" Type="Int32" />
@@ -1494,6 +1897,13 @@
     </FunctionImport>
     <FunctionImport Name="xappform" ReturnType="Collection(encomp_devModel.xappform_Result)" />
   </EntityContainer>
+  <ComplexType Name="AcadCalendarGet_Result">
+    <Property Type="Int32" Name="AcadCalendarId" Nullable="false" />
+    <Property Type="String" Name="EventName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="StartDatetime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDatetime" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="HolidayFlag" Nullable="true" />
+  </ComplexType>
   <ComplexType Name="AcadConductLetterPermisGet_Result">
     <Property Type="Int32" Name="AcadConductLetterPermisId" Nullable="false" />
     <Property Type="Int32" Name="StudentId" Nullable="false" />
@@ -1543,6 +1953,98 @@
     <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
     <Property Type="String" Name="Remarks" Nullable="true" MaxLength="500" />
   </ComplexType>
+  <ComplexType Name="AcadExamResultAssesRptGet_Result">
+    <Property Type="Int32" Name="AcadExamResultAssesRptId" Nullable="false" />
+    <Property Type="Int32" Name="StudentId" Nullable="false" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ReportName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Result" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ReportedBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeRoom" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AcadExamResultAssesRptStudentsGet_Result">
+    <Property Type="Int32" Name="StudentId" Nullable="false" />
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StudentNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="AcadExamResultPhEduGet_Result">
+    <Property Type="Int32" Name="AcadExamResultPhEduId" Nullable="false" />
+    <Property Type="Int32" Name="BatchId" Nullable="true" />
+    <Property Type="Int32" Name="GradeId" Nullable="true" />
+    <Property Type="Int32" Name="SectionId" Nullable="true" />
+    <Property Type="Int32" Name="StudentId" Nullable="true" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Test" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Result" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Teacher" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="AcadExamResultQuizGet_Result">
+    <Property Type="Int32" Name="AcadExamResultQuizId" Nullable="false" />
+    <Property Type="Int32" Name="BatchId" Nullable="true" />
+    <Property Type="Int32" Name="GradeId" Nullable="true" />
+    <Property Type="Int32" Name="SectionId" Nullable="true" />
+    <Property Type="Int32" Name="StudentId" Nullable="true" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Score" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Teacher" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="AcadExExamSyllabusGet_Result">
+    <Property Type="Int32" Name="AcadExExamSyllabusId" Nullable="false" />
+    <Property Type="Int32" Name="BatchId" Nullable="true" />
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ChapterId" Nullable="true" />
+    <Property Type="String" Name="ChapterTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Reference" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AcadHcareNurseNoteGet_Result">
+    <Property Type="Int32" Name="AcadHcareNurseNoteId" Nullable="false" />
+    <Property Type="Int32" Name="StudentId" Nullable="false" />
+    <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="SickDate" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Prescription" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="AcadLessonPlanGet_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SubjectTeacher" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AcadProCreativityReportGet_Result">
+    <Property Type="Int32" Name="AcadProCreativityReportId" Nullable="false" />
+    <Property Type="Int32" Name="BatchId" Nullable="true" />
+    <Property Type="Int32" Name="GradeId" Nullable="true" />
+    <Property Type="Int32" Name="SectionId" Nullable="true" />
+    <Property Type="Int32" Name="StudentId" Nullable="true" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ProjectDate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="AcadStudentDairyGet_Result">
+    <Property Type="Int32" Name="AcadStudentDairyId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="StudentdairyDate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="AcadStudentLeaveApplicationGet_Result">
+    <Property Type="Int32" Name="StudentId" Nullable="true" />
+    <Property Type="String" Name="StudentName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="days" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="AcadTTExamGet_Result">
+    <Property Type="DateTime" Name="ExamDate" Nullable="true" />
+    <Property Type="String" Name="ExamDay" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ExamTime" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LocationId" Nullable="true" />
+  </ComplexType>
   <ComplexType Name="GetAdmissionNumber_Result">
     <Property Type="String" Name="AdmissionNumber" Nullable="true" MaxLength="10" />
     <Property Type="Int32" Name="UserId" Nullable="true" />
@@ -1555,6 +2057,7 @@
     <Property Type="Int32" Name="ApplicationFormId" Nullable="true" />
     <Property Type="Int32" Name="AppFormGroupId" Nullable="false" />
     <Property Type="String" Name="AppFormGroupLabel" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AppFormGroupName" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="AppFormFieldId" Nullable="false" />
     <Property Type="String" Name="FieldName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Value" Nullable="true" MaxLength="500" />
@@ -1707,6 +2210,10 @@
     <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="FileName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="SQLLoaderJobName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetCategoryList_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
   </ComplexType>
   <ComplexType Name="GetChapterDetail_Result">
     <Property Type="Int32" Name="ChapterId" Nullable="false" />

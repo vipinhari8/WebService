@@ -9,14 +9,14 @@
 
 namespace EduRp.Data
 {
-    using EduRp.Data.Core;
     using System;
     
-    public partial class GetApplicationFormDetail_Result:Entity
+    public partial class GetApplicationFormDetail_Result
     {
         public Nullable<int> ApplicationFormId { get; set; }
         public int AppFormGroupId { get; set; }
         public string AppFormGroupLabel { get; set; }
+        public string AppFormGroupName { get; set; }
         public int AppFormFieldId { get; set; }
         public string FieldName { get; set; }
         public string Value { get; set; }

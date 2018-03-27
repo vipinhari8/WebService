@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="encomp_devModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcadCalendar">
+    <Key>
+      <PropertyRef Name="AcadCalendarId" />
+    </Key>
+    <Property Name="AcadCalendarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="StartDatetime" Type="datetime" />
+    <Property Name="EndDatetime" Type="datetime" />
+    <Property Name="HolidayFlag" Type="tinyint" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
   <EntityType Name="AcadConductLetterPermis">
     <Key>
       <PropertyRef Name="AcadConductLetterPermisId" />
@@ -69,6 +86,214 @@
     <Property Name="StudentId" Type="int" Nullable="false" />
     <Property Name="Status" Type="char" MaxLength="1" />
     <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadExamResultAssesRpt">
+    <Key>
+      <PropertyRef Name="AcadExamResultAssesRptId" />
+    </Key>
+    <Property Name="AcadExamResultAssesRptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="ReportName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Result" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomeRoom" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadExamResultPhEdu">
+    <Key>
+      <PropertyRef Name="AcadExamResultPhEduId" />
+    </Key>
+    <Property Name="AcadExamResultPhEduId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="Test" Type="nvarchar" MaxLength="50" />
+    <Property Name="Result" Type="nvarchar" MaxLength="50" />
+    <Property Name="Teacher" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadExamResultQuiz">
+    <Key>
+      <PropertyRef Name="AcadExamResultQuizId" />
+    </Key>
+    <Property Name="AcadExamResultQuizId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="Score" Type="nvarchar" MaxLength="20" />
+    <Property Name="Teacher" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadExExamSyllabus">
+    <Key>
+      <PropertyRef Name="AcadExExamSyllabusId" />
+    </Key>
+    <Property Name="AcadExExamSyllabusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="ExamtypeId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="ChapterId" Type="int" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadHcareNurseNote">
+    <Key>
+      <PropertyRef Name="AcadHcareNurseNoteId" />
+    </Key>
+    <Property Name="AcadHcareNurseNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="SickDate" Type="date" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Prescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="NurseName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Attachement" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadLessonPlan">
+    <Key>
+      <PropertyRef Name="AcadLessonPlanId" />
+    </Key>
+    <Property Name="AcadLessonPlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="SemesterId" Type="int" />
+    <Property Name="Meeting" Type="nvarchar" MaxLength="50" />
+    <Property Name="StandardofCompetance" Type="nvarchar" MaxLength="50" />
+    <Property Name="BasicCompetance" Type="nvarchar" MaxLength="50" />
+    <Property Name="Indicator" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeAllocation" Type="int" />
+    <Property Name="InstructiveObjective" Type="nvarchar" MaxLength="50" />
+    <Property Name="TeachingMaterial" Type="nvarchar" MaxLength="50" />
+    <Property Name="TeachingMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="CharacterImplementation" Type="nvarchar" MaxLength="50" />
+    <Property Name="IntialActivity" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainActivity" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClosingActivity" Type="nvarchar" MaxLength="50" />
+    <Property Name="LearningScore" Type="int" />
+    <Property Name="Assessment" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubjectTeacher" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadProCreativityReport">
+    <Key>
+      <PropertyRef Name="AcadProCreativityReportId" />
+    </Key>
+    <Property Name="AcadProCreativityReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectDate" Type="date" />
+    <Property Name="Type" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReportedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadStudentDairy">
+    <Key>
+      <PropertyRef Name="AcadStudentDairyId" />
+    </Key>
+    <Property Name="AcadStudentDairyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="StudentdairyDate" Type="date" />
+    <Property Name="Section" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadStudentLeaveApplication">
+    <Key>
+      <PropertyRef Name="AcadStudentLeaveApplicationId" />
+    </Key>
+    <Property Name="AcadStudentLeaveApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="StudentLeaveApplicationDate" Type="date" />
+    <Property Name="Section" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentStartDate" Type="date" />
+    <Property Name="StudentEndDate" Type="date" />
+    <Property Name="HomeRoomName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attachement" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadTeacherNote">
+    <Key>
+      <PropertyRef Name="AcadTeacherNoteId" />
+    </Key>
+    <Property Name="AcadTeacherNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="TeacherNoteDate" Type="date" />
+    <Property Name="Section" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attachement" Type="nvarchar" MaxLength="200" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
+  </EntityType>
+  <EntityType Name="AcadTTExam">
+    <Key>
+      <PropertyRef Name="AcadTTExamId" />
+    </Key>
+    <Property Name="AcadTTExamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchId" Type="int" />
+    <Property Name="ExamtypeId" Type="int" />
+    <Property Name="GradeId" Type="int" />
+    <Property Name="ExamDate" Type="date" />
+    <Property Name="ExamDay" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExamTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="LocationId" Type="int" />
     <Property Name="UniversityId" Type="int" />
     <Property Name="active" Type="tinyint" />
     <Property Name="lastupdateddt" Type="datetime" />
@@ -244,6 +469,17 @@
     <Property Name="ModuleName" Type="nvarchar" MaxLength="50" />
     <Property Name="FileName" Type="nvarchar" MaxLength="50" />
     <Property Name="SQLLoaderJobName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="active" Type="tinyint" />
+    <Property Name="lastupdateddt" Type="datetime" />
+    <Property Name="lastupdatedby" Type="int" />
   </EntityType>
   <EntityType Name="ChapterMaster">
     <Key>
@@ -804,6 +1040,17 @@ warning 6002: The table/view 'encomp_dev.sys.database_firewall_rules' does not h
     <Property Name="create_date" Type="datetime" Nullable="false" />
     <Property Name="modify_date" Type="datetime" Nullable="false" />
   </EntityType>
+  <Function Name="AcadCalendarGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadCalendarUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
   <Function Name="AcadConductLetterPermisGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="universityid" Type="int" Mode="In" />
     <Parameter Name="userid" Type="int" Mode="In" />
@@ -865,6 +1112,144 @@ warning 6002: The table/view 'encomp_dev.sys.database_firewall_rules' does not h
     <Parameter Name="courseid" Type="int" Mode="In" />
   </Function>
   <Function Name="AcadConductStudentCharacterUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultAssesRptGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+    <Parameter Name="sectionid" Type="int" Mode="In" />
+    <Parameter Name="studentid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultAssesRptStudentsGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+    <Parameter Name="sectionid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultAssesRptUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultPhEduGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+    <Parameter Name="sectionid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultPhEduUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultQuizGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+    <Parameter Name="sectionid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadExamResultQuizUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadExExamSyllabusGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadExExamSyllabusUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadHcareNurseNoteGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="Gradeid" Type="int" Mode="In" />
+    <Parameter Name="SectionId" Type="int" Mode="In" />
+    <Parameter Name="studentid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadHcareNurseNoteUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadLessonPlanGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadLessonPlanUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadProCreativityReportGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="gradeId" Type="int" Mode="In" />
+    <Parameter Name="sectionid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadProCreativityReportUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadStudentDairyGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="BatchId" Type="int" Mode="In" />
+    <Parameter Name="GradeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadStudentDairyUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadStudentLeaveApplicationGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="BatchId" Type="int" Mode="In" />
+    <Parameter Name="GradeId" Type="int" Mode="In" />
+    <Parameter Name="SectionId" Type="int" Mode="In" />
+    <Parameter Name="StudentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadStudentLeaveApplicationUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadTeacherNoteGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="BatchId" Type="int" Mode="In" />
+    <Parameter Name="GradeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadTeacherNoteUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AcadTTExamGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
+    <Parameter Name="batchid" Type="int" Mode="In" />
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AcadTTExamUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="universityid" Type="int" Mode="In" />
     <Parameter Name="jsontext" Type="varchar(max)" Mode="In" />
   </Function>
@@ -990,6 +1375,11 @@ warning 6002: The table/view 'encomp_dev.sys.database_firewall_rules' does not h
   <Function Name="GetBulkLoadDetailById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="universityid" Type="int" Mode="In" />
     <Parameter Name="BulkLoadMasterId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCategoryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="universityid" Type="int" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="token" Type="varchar" Mode="In" />
   </Function>
   <Function Name="GetChapterDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="universityid" Type="int" Mode="In" />
@@ -1447,11 +1837,23 @@ warning 6002: The table/view 'encomp_dev.sys.database_firewall_rules' does not h
   </Function>
   <Function Name="xappform" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="encomp_devModelStoreContainer">
+    <EntitySet Name="AcadCalendar" EntityType="Self.AcadCalendar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcadConductLetterPermis" EntityType="Self.AcadConductLetterPermis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcadConductLostFound" EntityType="Self.AcadConductLostFound" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcadConductMeritDemerit" EntityType="Self.AcadConductMeritDemerit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcadConductMYL" EntityType="Self.AcadConductMYL" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcadConductStudentCharacter" EntityType="Self.AcadConductStudentCharacter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadExamResultAssesRpt" EntityType="Self.AcadExamResultAssesRpt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadExamResultPhEdu" EntityType="Self.AcadExamResultPhEdu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadExamResultQuiz" EntityType="Self.AcadExamResultQuiz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadExExamSyllabus" EntityType="Self.AcadExExamSyllabus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadHcareNurseNote" EntityType="Self.AcadHcareNurseNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadLessonPlan" EntityType="Self.AcadLessonPlan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadProCreativityReport" EntityType="Self.AcadProCreativityReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadStudentDairy" EntityType="Self.AcadStudentDairy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadStudentLeaveApplication" EntityType="Self.AcadStudentLeaveApplication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadTeacherNote" EntityType="Self.AcadTeacherNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcadTTExam" EntityType="Self.AcadTTExam" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ApplicationForm" EntityType="Self.ApplicationForm" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ApplicationFormDetail" EntityType="Self.ApplicationFormDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ApplicationFormDocument" EntityType="Self.ApplicationFormDocument" Schema="dbo" store:Type="Tables" />
@@ -1465,6 +1867,7 @@ warning 6002: The table/view 'encomp_dev.sys.database_firewall_rules' does not h
     <EntitySet Name="BatchMaster" EntityType="Self.BatchMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BatchProgramStudyAssociation" EntityType="Self.BatchProgramStudyAssociation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BulkLoadMaster" EntityType="Self.BulkLoadMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChapterMaster" EntityType="Self.ChapterMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClassRoomMaster" EntityType="Self.ClassRoomMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseMaster" EntityType="Self.CourseMaster" Schema="dbo" store:Type="Tables" />

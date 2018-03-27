@@ -1,4 +1,5 @@
 ﻿using EduRp.Data;
+using EduRp.Data.ViewModel;
 using EduRp.Service.IService;
 using EduRp.Service.Service;
 using System;
@@ -36,7 +37,7 @@ namespace EduRp.WebApi.Controllers
         }
         //UpdateApplicationFormDetail
         [HttpPut]
-        public IHttpActionResult UpdateApplicationForm([FromBody]List<GetApplicationFormDetail_Result> appFormDetail)
+        public IHttpActionResult UpdateApplicationForm([FromBody]List<UpdateStudentApplicationFormDetail> appFormDetail)
         {
             var isUpdate = stdadmfrmService.UpdateApplicationForm(appFormDetail[0].UniversityId, appFormDetail);
             if (isUpdate == true)

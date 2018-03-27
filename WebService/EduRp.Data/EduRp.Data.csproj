@@ -105,6 +105,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcadCalendar.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadCalendarGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AcadConductLetterPermi.cs">
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
@@ -133,6 +139,72 @@
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AcadConductStudentCharacterGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultAssesRpt.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultAssesRptGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultAssesRptStudentsGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultPhEdu.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultPhEduGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultQuiz.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExamResultQuizGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExExamSyllabu.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadExExamSyllabusGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadHcareNurseNote.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadHcareNurseNoteGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadLessonPlan.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadLessonPlanGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadProCreativityReport.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadProCreativityReportGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadStudentDairy.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadStudentDairyGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadStudentLeaveApplication.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadStudentLeaveApplicationGet_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadTeacherNote.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadTTExam.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcadTTExamGet_Result.cs">
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForm.cs">
@@ -172,6 +244,9 @@
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="BulkLoadMaster.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryMaster.cs">
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ChapterMaster.cs">
@@ -290,6 +365,9 @@
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GetBulkLoadDetail_Result.cs">
+      <DependentUpon>EduRpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCategoryList_Result.cs">
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GetChapterDetail_Result.cs">
@@ -507,6 +585,7 @@
     <Compile Include="ViewModel\ScheduleExamModel.cs" />
     <Compile Include="ViewModel\StudentApplicationForm.cs" />
     <Compile Include="ViewModel\TokenEntityViewModel.cs" />
+    <Compile Include="ViewModel\UpdateStudentApplicationFormDetail.cs" />
     <Compile Include="xappform_Result.cs">
       <DependentUpon>EduRpModel.tt</DependentUpon>
     </Compile>

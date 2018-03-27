@@ -36,7 +36,7 @@ namespace EduRp.Service.Service
             throw new NotImplementedException();
         }
         
-        public bool UpdateApplicationForm(int? id, List<GetApplicationFormDetail_Result> applicationFormDetail)
+        public bool UpdateApplicationForm(int? id, List<UpdateStudentApplicationFormDetail> applicationFormDetail)
         {
             try
             {

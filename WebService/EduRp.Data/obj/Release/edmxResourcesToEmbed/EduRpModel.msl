@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="encomp_devModelStoreContainer" CdmEntityContainer="encomp_devEntities">
+    <EntitySetMapping Name="AcadCalendars">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadCalendar">
+        <MappingFragment StoreEntitySet="AcadCalendar">
+          <ScalarProperty Name="AcadCalendarId" ColumnName="AcadCalendarId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="StartDatetime" ColumnName="StartDatetime" />
+          <ScalarProperty Name="EndDatetime" ColumnName="EndDatetime" />
+          <ScalarProperty Name="HolidayFlag" ColumnName="HolidayFlag" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="AcadConductLetterPermis">
       <EntityTypeMapping TypeName="encomp_devModel.AcadConductLetterPermi">
         <MappingFragment StoreEntitySet="AcadConductLetterPermis">
@@ -73,6 +91,225 @@
           <ScalarProperty Name="StudentId" ColumnName="StudentId" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadExamResultAssesRpts">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadExamResultAssesRpt">
+        <MappingFragment StoreEntitySet="AcadExamResultAssesRpt">
+          <ScalarProperty Name="AcadExamResultAssesRptId" ColumnName="AcadExamResultAssesRptId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="HomeRoom" ColumnName="HomeRoom" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadExamResultPhEdus">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadExamResultPhEdu">
+        <MappingFragment StoreEntitySet="AcadExamResultPhEdu">
+          <ScalarProperty Name="AcadExamResultPhEduId" ColumnName="AcadExamResultPhEduId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Test" ColumnName="Test" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadExamResultQuizs">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadExamResultQuiz">
+        <MappingFragment StoreEntitySet="AcadExamResultQuiz">
+          <ScalarProperty Name="AcadExamResultQuizId" ColumnName="AcadExamResultQuizId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadExExamSyllabus">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadExExamSyllabu">
+        <MappingFragment StoreEntitySet="AcadExExamSyllabus">
+          <ScalarProperty Name="AcadExExamSyllabusId" ColumnName="AcadExExamSyllabusId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="ExamtypeId" ColumnName="ExamtypeId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadHcareNurseNotes">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadHcareNurseNote">
+        <MappingFragment StoreEntitySet="AcadHcareNurseNote">
+          <ScalarProperty Name="AcadHcareNurseNoteId" ColumnName="AcadHcareNurseNoteId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="SickDate" ColumnName="SickDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+          <ScalarProperty Name="NurseName" ColumnName="NurseName" />
+          <ScalarProperty Name="Attachement" ColumnName="Attachement" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadLessonPlans">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadLessonPlan">
+        <MappingFragment StoreEntitySet="AcadLessonPlan">
+          <ScalarProperty Name="AcadLessonPlanId" ColumnName="AcadLessonPlanId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
+          <ScalarProperty Name="Meeting" ColumnName="Meeting" />
+          <ScalarProperty Name="StandardofCompetance" ColumnName="StandardofCompetance" />
+          <ScalarProperty Name="BasicCompetance" ColumnName="BasicCompetance" />
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <ScalarProperty Name="TimeAllocation" ColumnName="TimeAllocation" />
+          <ScalarProperty Name="InstructiveObjective" ColumnName="InstructiveObjective" />
+          <ScalarProperty Name="TeachingMaterial" ColumnName="TeachingMaterial" />
+          <ScalarProperty Name="TeachingMethod" ColumnName="TeachingMethod" />
+          <ScalarProperty Name="CharacterImplementation" ColumnName="CharacterImplementation" />
+          <ScalarProperty Name="IntialActivity" ColumnName="IntialActivity" />
+          <ScalarProperty Name="MainActivity" ColumnName="MainActivity" />
+          <ScalarProperty Name="ClosingActivity" ColumnName="ClosingActivity" />
+          <ScalarProperty Name="LearningScore" ColumnName="LearningScore" />
+          <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+          <ScalarProperty Name="SubjectTeacher" ColumnName="SubjectTeacher" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadProCreativityReports">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadProCreativityReport">
+        <MappingFragment StoreEntitySet="AcadProCreativityReport">
+          <ScalarProperty Name="AcadProCreativityReportId" ColumnName="AcadProCreativityReportId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectDate" ColumnName="ProjectDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadStudentDairies">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadStudentDairy">
+        <MappingFragment StoreEntitySet="AcadStudentDairy">
+          <ScalarProperty Name="AcadStudentDairyId" ColumnName="AcadStudentDairyId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="StudentdairyDate" ColumnName="StudentdairyDate" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadStudentLeaveApplications">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadStudentLeaveApplication">
+        <MappingFragment StoreEntitySet="AcadStudentLeaveApplication">
+          <ScalarProperty Name="AcadStudentLeaveApplicationId" ColumnName="AcadStudentLeaveApplicationId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="StudentLeaveApplicationDate" ColumnName="StudentLeaveApplicationDate" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="StudentStartDate" ColumnName="StudentStartDate" />
+          <ScalarProperty Name="StudentEndDate" ColumnName="StudentEndDate" />
+          <ScalarProperty Name="HomeRoomName" ColumnName="HomeRoomName" />
+          <ScalarProperty Name="Attachement" ColumnName="Attachement" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadTeacherNotes">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadTeacherNote">
+        <MappingFragment StoreEntitySet="AcadTeacherNote">
+          <ScalarProperty Name="AcadTeacherNoteId" ColumnName="AcadTeacherNoteId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="TeacherNoteDate" ColumnName="TeacherNoteDate" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Attachement" ColumnName="Attachement" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcadTTExams">
+      <EntityTypeMapping TypeName="encomp_devModel.AcadTTExam">
+        <MappingFragment StoreEntitySet="AcadTTExam">
+          <ScalarProperty Name="AcadTTExamId" ColumnName="AcadTTExamId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="ExamtypeId" ColumnName="ExamtypeId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="ExamDate" ColumnName="ExamDate" />
+          <ScalarProperty Name="ExamDay" ColumnName="ExamDay" />
+          <ScalarProperty Name="ExamTime" ColumnName="ExamTime" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
           <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
@@ -261,6 +498,18 @@
           <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
           <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="SQLLoaderJobName" ColumnName="SQLLoaderJobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryMasters">
+      <EntityTypeMapping TypeName="encomp_devModel.CategoryMaster">
+        <MappingFragment StoreEntitySet="CategoryMaster">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UniversityId" ColumnName="UniversityId" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lastupdateddt" ColumnName="lastupdateddt" />
+          <ScalarProperty Name="lastupdatedby" ColumnName="lastupdatedby" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -851,6 +1100,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AcadCalendarGet" FunctionName="encomp_devModel.Store.AcadCalendarGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadCalendarGet_Result">
+          <ScalarProperty Name="AcadCalendarId" ColumnName="AcadCalendarId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="StartDatetime" ColumnName="StartDatetime" />
+          <ScalarProperty Name="EndDatetime" ColumnName="EndDatetime" />
+          <ScalarProperty Name="HolidayFlag" ColumnName="HolidayFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadCalendarUpdate" FunctionName="encomp_devModel.Store.AcadCalendarUpdate" />
     <FunctionImportMapping FunctionImportName="AcadConductLetterPermisGet" FunctionName="encomp_devModel.Store.AcadConductLetterPermisGet">
       <ResultMapping>
         <ComplexTypeMapping TypeName="encomp_devModel.AcadConductLetterPermisGet_Result">
@@ -925,6 +1186,154 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="AcadConductStudentCharacterUpdate" FunctionName="encomp_devModel.Store.AcadConductStudentCharacterUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadExamResultAssesRptGet" FunctionName="encomp_devModel.Store.AcadExamResultAssesRptGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadExamResultAssesRptGet_Result">
+          <ScalarProperty Name="AcadExamResultAssesRptId" ColumnName="AcadExamResultAssesRptId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="HomeRoom" ColumnName="HomeRoom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadExamResultAssesRptStudentsGet" FunctionName="encomp_devModel.Store.AcadExamResultAssesRptStudentsGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadExamResultAssesRptStudentsGet_Result">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="AdmissionNumber" ColumnName="AdmissionNumber" />
+          <ScalarProperty Name="StudentNumber" ColumnName="StudentNumber" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadExamResultAssesRptUpdate" FunctionName="encomp_devModel.Store.AcadExamResultAssesRptUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadExamResultPhEduGet" FunctionName="encomp_devModel.Store.AcadExamResultPhEduGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadExamResultPhEduGet_Result">
+          <ScalarProperty Name="AcadExamResultPhEduId" ColumnName="AcadExamResultPhEduId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Test" ColumnName="Test" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadExamResultPhEduUpdate" FunctionName="encomp_devModel.Store.AcadExamResultPhEduUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadExamResultQuizGet" FunctionName="encomp_devModel.Store.AcadExamResultQuizGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadExamResultQuizGet_Result">
+          <ScalarProperty Name="AcadExamResultQuizId" ColumnName="AcadExamResultQuizId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadExamResultQuizUpdate" FunctionName="encomp_devModel.Store.AcadExamResultQuizUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadExExamSyllabusGet" FunctionName="encomp_devModel.Store.AcadExExamSyllabusGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadExExamSyllabusGet_Result">
+          <ScalarProperty Name="AcadExExamSyllabusId" ColumnName="AcadExExamSyllabusId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+          <ScalarProperty Name="ChapterTitle" ColumnName="ChapterTitle" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadExExamSyllabusUpdate" FunctionName="encomp_devModel.Store.AcadExExamSyllabusUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadHcareNurseNoteGet" FunctionName="encomp_devModel.Store.AcadHcareNurseNoteGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadHcareNurseNoteGet_Result">
+          <ScalarProperty Name="AcadHcareNurseNoteId" ColumnName="AcadHcareNurseNoteId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="AdmissionNumber" ColumnName="AdmissionNumber" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="SickDate" ColumnName="SickDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadHcareNurseNoteUpdate" FunctionName="encomp_devModel.Store.AcadHcareNurseNoteUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadLessonPlanGet" FunctionName="encomp_devModel.Store.AcadLessonPlanGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadLessonPlanGet_Result">
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="SubjectTeacher" ColumnName="SubjectTeacher" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadLessonPlanUpdate" FunctionName="encomp_devModel.Store.AcadLessonPlanUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadProCreativityReportGet" FunctionName="encomp_devModel.Store.AcadProCreativityReportGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadProCreativityReportGet_Result">
+          <ScalarProperty Name="AcadProCreativityReportId" ColumnName="AcadProCreativityReportId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectDate" ColumnName="ProjectDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadProCreativityReportUpdate" FunctionName="encomp_devModel.Store.AcadProCreativityReportUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadStudentDairyGet" FunctionName="encomp_devModel.Store.AcadStudentDairyGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadStudentDairyGet_Result">
+          <ScalarProperty Name="AcadStudentDairyId" ColumnName="AcadStudentDairyId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StudentdairyDate" ColumnName="StudentdairyDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadStudentDairyUpdate" FunctionName="encomp_devModel.Store.AcadStudentDairyUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadStudentLeaveApplicationGet" FunctionName="encomp_devModel.Store.AcadStudentLeaveApplicationGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadStudentLeaveApplicationGet_Result">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="days" ColumnName="days" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadStudentLeaveApplicationUpdate" FunctionName="encomp_devModel.Store.AcadStudentLeaveApplicationUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadTeacherNoteGet" FunctionName="encomp_devModel.Store.AcadTeacherNoteGet" />
+    <FunctionImportMapping FunctionImportName="AcadTeacherNoteUpdate" FunctionName="encomp_devModel.Store.AcadTeacherNoteUpdate" />
+    <FunctionImportMapping FunctionImportName="AcadTTExamGet" FunctionName="encomp_devModel.Store.AcadTTExamGet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.AcadTTExamGet_Result">
+          <ScalarProperty Name="ExamDate" ColumnName="ExamDate" />
+          <ScalarProperty Name="ExamDay" ColumnName="ExamDay" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="ExamTime" ColumnName="ExamTime" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcadTTExamUpdate" FunctionName="encomp_devModel.Store.AcadTTExamUpdate" />
     <FunctionImportMapping FunctionImportName="GetAdmissionNumber" FunctionName="encomp_devModel.Store.GetAdmissionNumber">
       <ResultMapping>
         <ComplexTypeMapping TypeName="encomp_devModel.GetAdmissionNumber_Result">
@@ -947,6 +1356,7 @@
           <ScalarProperty Name="ApplicationFormId" ColumnName="ApplicationFormId" />
           <ScalarProperty Name="AppFormGroupId" ColumnName="AppFormGroupId" />
           <ScalarProperty Name="AppFormGroupLabel" ColumnName="AppFormGroupLabel" />
+          <ScalarProperty Name="AppFormGroupName" ColumnName="AppFormGroupName" />
           <ScalarProperty Name="AppFormFieldId" ColumnName="AppFormFieldId" />
           <ScalarProperty Name="FieldName" ColumnName="FieldName" />
           <ScalarProperty Name="Value" ColumnName="Value" />
@@ -1169,6 +1579,14 @@
           <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
           <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="SQLLoaderJobName" ColumnName="SQLLoaderJobName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCategoryList" FunctionName="encomp_devModel.Store.GetCategoryList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="encomp_devModel.GetCategoryList_Result">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
